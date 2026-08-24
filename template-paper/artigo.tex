@@ -69,15 +69,19 @@
     {\thesubsection}{1em}{}
 
 % Informações do artigo
-\title{\vspace{0.6cm}\textbf{\Large Análise Computacional de Sistemas Complexos Utilizando Métodos Numéricos Avançados}}
-\author{
-    João da Silva$^{1}$, Maria Santos$^{2}$, Pedro Oliveira$^{3}$ \\[0.3cm]
-    \small
-    $^{1}$Faculdade de Tecnologia do Estado de São Paulo \\
-    $^{2}$Universidade de São Paulo \\
-    $^{3}$Instituto de Pesquisas Tecnológicas \\[0.2cm]
-    \textit{joao.silva@fatec.sp.gov.br, maria.santos@usp.br, pedro.oliveira@ipt.br}
+\title{
+Sistema Educacional de Baixo Custo com Realidade Aumentada para o Ensino Prático de Montagem de Hardware e Redes
 }
+
+\author{
+Éric Leandro$^{1}$, Lucas Miura$^{1}$, Luiz Medina$^{1}$, Pedro Silva$^{1}$\\[0.3cm]
+\small $^{1}$Faculdade de Tecnologia do Estado de São Paulo\\[0.2cm]
+\small eric.leandro@aluno.cps.sp.gov.br\\
+\small lucas.miura@aluno.cps.sp.gov.br\\
+\small luiz.medina@aluno.cps.sp.gov.br\\
+\small pedro.silva13@aluno.cps.sp.gov.br
+}
+
 \date{}
 
 \begin{document}
@@ -91,157 +95,166 @@
 % Resumo
 \section*{Resumo}
 
-\lipsum[1] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Este trabalho apresenta o SAVIT, um sistema educacional de baixo custo baseado em Realidade Aumentada (RA), voltado ao ensino prático de montagem de hardware e redes de computadores. A proposta busca oferecer uma experiência interativa e acessível por meio de dispositivos móveis, permitindo que estudantes realizem atividades práticas sem a necessidade de laboratórios físicos ou equipamentos de alto custo. O sistema utiliza Unity, ARCore, MediaPipe e visão computacional para possibilitar a interação com componentes virtuais através de gestos capturados pela câmera do celular. Além disso, a aplicação permite posicionar peças em superfícies reais utilizando Realidade Aumentada, promovendo uma experiência de aprendizado mais intuitiva, dinâmica e imersiva. O projeto busca democratizar o acesso ao ensino técnico, contribuindo para uma aprendizagem mais moderna, acessível e alinhada às tecnologias emergentes.
 
 \vspace{0.3cm}
-\noindent\textit{\textbf{Palavras-chave:}} Sistemas complexos, Métodos numéricos, Análise computacional, Modelagem matemática, Simulação
+\noindent\textit{\textbf{Palavras-chave:}} Sistema Educacional; Realidade Aumentada; Visão Computacional; Redes de Computadores.
 
 \vspace{0.5cm}
 \noindent\rule{\textwidth}{0.5pt}
 \vspace{0.5cm}
 
+
+% Abstract
+\section*{Abstract}
+
+This work presents SAVIT, a low-cost educational system based on Augmented Reality (AR), designed for practical teaching of computer hardware assembly and networking. The proposal aims to provide an interactive and accessible experience through mobile devices, allowing students to perform practical activities without the need for physical laboratories or expensive equipment. The system was developed using Unity, ARCore, MediaPipe, and computer vision techniques to enable interaction with virtual components through gestures captured by the smartphone camera. In addition, the application allows users to place parts on real-world surfaces using Augmented Reality, promoting a more intuitive, dynamic, and immersive learning experience. The project seeks to democratize access to technical education, contributing to a more modern, accessible, and technology-aligned learning process.
+
+\vspace{0.3cm}
+\noindent\textit{\textbf{Keywords:}} Educational System; Augmented Reality; Computer Vision; Computer Networks.
+
+\vspace{0.5cm}
+\noindent\rule{\textwidth}{0.5pt}
+\vspace{0.5cm}
+
+
 % Introdução
 \section{Introdução}
 
-\lipsum[2-3] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin eu ipsum in lectus mollis penatibus \cite{santos2024, oliveira2023}.\footnote{Este é um exemplo de nota de rodapé. Notas de rodapé são úteis para adicionar informações complementares sem interromper o fluxo do texto principal.}
+O avanço das tecnologias digitais vem transformando significativamente os métodos de ensino, especialmente em áreas técnicas que exigem atividades práticas, como infraestrutura computacional, montagem de hardware e redes de computadores. Entretanto, muitas instituições de ensino ainda enfrentam dificuldades relacionadas à limitação de laboratórios físicos, falta de equipamentos adequados e altos custos de manutenção, comprometendo a experiência prática dos estudantes.
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed aliquam, nulla quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris \cite{silva2025}. Como discutido por Brown e Taylor \cite[p.~45]{brown2023}, os métodos clássicos ainda são fundamentais para a compreensão moderna dos sistemas dinâmicos.
+No primeiro semestre de 2025, foi realizada uma pesquisa de campo com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. Os resultados reforçaram a problemática investigada: apenas 26\% dos participantes afirmaram sempre possuir acesso adequado a equipamentos para aulas práticas, enquanto 48\% relataram prejuízos totais ou parciais no aprendizado devido à ausência desses recursos. Além disso, 71\% consideraram que tecnologias acessíveis baseadas em Realidade Aumentada ou Realidade Virtual poderiam contribuir para reduzir as dificuldades decorrentes da limitação de infraestrutura física.
+
+Nesse contexto, a utilização de tecnologias emergentes, como a Realidade Aumentada (RA), surge como uma alternativa capaz de complementar o processo de aprendizagem de maneira interativa e acessível. Diferentemente da Realidade Virtual, que cria ambientes totalmente digitais, a Realidade Aumentada permite integrar objetos virtuais ao ambiente físico real, proporcionando maior contextualização e acessibilidade ao usuário por meio de dispositivos móveis.
+
+Com base nesse cenário, o presente trabalho apresenta o SAVIT, um sistema educacional baseado em Realidade Aumentada, desenvolvido para dispositivos móveis Android. A aplicação permite que os usuários realizem a simulação interativa de montagem de componentes computacionais utilizando gestos capturados pela câmera do celular, promovendo uma experiência prática e intuitiva sem a necessidade de equipamentos físicos reais.
+
+Além disso, o sistema utiliza recursos como visão computacional, reconhecimento de gestos, MediaPipe e ARCore para possibilitar a interação entre o usuário e os componentes tridimensionais posicionados em superfícies reais. Dessa forma, o projeto busca democratizar o acesso ao aprendizado técnico, oferecendo uma solução de baixo custo voltada ao ensino prático de hardware e redes de computadores.
+
 
 % Objetivo
 \section{Objetivo}
 
-\lipsum[4] O principal objetivo deste trabalho é apresentar uma análise detalhada dos sistemas complexos utilizando métodos computacionais avançados. Os objetivos específicos incluem:
+O objetivo do SAVIT é proporcionar aos estudantes um ambiente de aprendizado prático baseado em Realidade Aumentada, permitindo a simulação da montagem de componentes computacionais de forma interativa e acessível. A aplicação foi desenvolvida para dispositivos móveis Android, utilizando a câmera do celular para detectar superfícies reais e posicionar objetos tridimensionais no ambiente físico.
+
+Além disso, o sistema utiliza reconhecimento de gestos para possibilitar a movimentação e interação com as peças virtuais, promovendo uma experiência educacional dinâmica e intuitiva. O projeto busca reduzir a dependência de laboratórios físicos e equipamentos de alto custo, ampliando o acesso ao ensino prático na área de infraestrutura computacional.
+
+Entre os objetivos específicos do projeto, destacam-se:
 
 \begin{itemize}
-    \item Desenvolver modelos matemáticos para representação de sistemas dinâmicos;
-    \item Implementar algoritmos numéricos eficientes para solução de equações diferenciais;
-    \item Validar os resultados através de simulações computacionais;
-    \item Comparar diferentes abordagens metodológicas existentes na literatura \cite{kumar2024, wang2023}.
+    \item Desenvolver uma aplicação mobile baseada em Realidade Aumentada para o ensino prático de hardware;
+    \item Permitir a interação com componentes tridimensionais através de gestos manuais;
+    \item Utilizar visão computacional para reconhecimento e movimentação de peças;
+    \item Oferecer uma solução educacional acessível utilizando dispositivos móveis compatíveis com ARCore;
+    \item Simular atividades práticas de montagem computacional sem necessidade de equipamentos físicos reais.
 \end{itemize}
 
 % Estado da Arte
 \section{Estado da Arte}
 
-\lipsum[5] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diversos estudos têm explorado a aplicação de métodos numéricos em sistemas complexos. Segundo \cite{johnson2024}, a utilização de técnicas avançadas permite uma melhor compreensão dos fenômenos físicos.
+A Realidade Aumentada (RA) vem sendo utilizada como ferramenta de apoio ao ensino técnico e profissionalizante, especialmente em atividades que envolvem visualização espacial, interação tridimensional e treinamento prático. Estudos apontam que sua utilização pode favorecer o engajamento, a compreensão de conteúdos e a aproximação entre conhecimentos teóricos e situações práticas.
 
-\lipsum[6] Os métodos clássicos de análise numérica, como o método de Euler e Runge-Kutta, têm sido amplamente utilizados na literatura \cite{brown2023}. Essas abordagens tradicionais estabeleceram as bases para o desenvolvimento de técnicas mais sofisticadas.
+Justimiano et al. \cite{justimiano2021} desenvolveram um sistema de RA voltado ao treinamento de procedimentos de montagem e manutenção de equipamentos. A solução atua como apoio à execução de tarefas técnicas, demonstrando o potencial da tecnologia para atividades práticas guiadas. Entretanto, sua aplicação é direcionada a cenários específicos de manutenção e não contempla o ensino de infraestrutura computacional com interação gestual.
 
-\lipsum[7] Métodos mais recentes incorporam técnicas de aprendizado de máquina e inteligência artificial \cite{zhang2025}, expandindo significativamente as possibilidades de análise e modelagem de sistemas complexos.
+Chiang, Shang e Qiao \cite{chiang2022}, em uma revisão sistemática sobre Realidade Aumentada aplicada à formação profissional, identificaram sua utilização principalmente em treinamento médico, manutenção industrial e atividades de montagem. Os autores destacam resultados positivos relacionados ao desenvolvimento de habilidades práticas, embora apontem a necessidade de aplicações educacionais mais maduras e adaptadas aos diferentes contextos de formação profissional.
+
+Supriyanto et al. \cite{supriyanto2023} analisaram aplicações de RA na educação profissional e observaram benefícios relacionados à compreensão, experiência de aprendizagem e participação dos estudantes. Os resultados reforçam o potencial da tecnologia como complemento ao ensino convencional, especialmente em atividades que exigem experiências práticas.
+
+Além das aplicações educacionais, o MediaPipe \cite{lugaresi2019} fornece recursos de visão computacional capazes de reconhecer e rastrear movimentos das mãos em tempo real. Essa abordagem permite desenvolver formas de interação mais naturais com objetos virtuais, reduzindo a necessidade de dispositivos físicos adicionais.
+
+A Tabela \ref{tab:estado-arte} sintetiza as principais características dos trabalhos analisados e evidencia o diferencial proposto pelo SAVIT.
+
+\begin{table}[H]
+\centering
+\caption{Comparação entre trabalhos relacionados e o SAVIT}
+\label{tab:estado-arte}
+\small
+\begin{tabular}{|p{3.1cm}|p{3.4cm}|p{3.4cm}|p{3.4cm}|}
+\hline
+\textbf{Trabalho} & \textbf{Aplicação} & \textbf{Contribuição} & \textbf{Limitação / Diferencial} \\
+\hline
+
+Justimiano et al. (2021) &
+Montagem e manutenção de equipamentos com RA &
+Treinamento técnico guiado e interativo &
+Não possui foco específico em infraestrutura computacional com interação gestual \\
+\hline
+
+Chiang, Shang e Qiao (2022) &
+RA aplicada à formação profissional &
+Evidencia benefícios da RA em atividades práticas e treinamento &
+Revisão ampla, sem propor uma solução específica para montagem de hardware \\
+\hline
+
+Supriyanto et al. (2023) &
+RA na educação profissional &
+Aponta melhorias na compreensão e experiência de aprendizagem &
+Analisa diferentes contextos educacionais sem foco específico em hardware \\
+\hline
+
+Lugaresi et al. (2019) &
+Reconhecimento de mãos com MediaPipe &
+Permite rastreamento e interação gestual em tempo real &
+Framework de visão computacional, não uma solução educacional completa \\
+\hline
+
+SAVIT &
+Montagem de hardware em Realidade Aumentada &
+Integra RA, visão computacional e gestos em dispositivos móveis &
+Propõe interação prática voltada ao ensino de infraestrutura computacional \\
+\hline
+
+\end{tabular}
+\end{table}
+
+Nesse contexto, o SAVIT diferencia-se por integrar Realidade Aumentada, visão computacional e reconhecimento de gestos em uma aplicação mobile voltada ao ensino de montagem de hardware. A proposta busca combinar acessibilidade e interação natural em um único ambiente educacional, reduzindo a dependência de equipamentos físicos especializados.
 
 % Metodologia
 \section{Metodologia}
 
-\lipsum[8] A metodologia desenvolvida neste trabalho segue as etapas ilustradas na Figura \ref{fig:exemplo} e descritas a seguir.
-
-\subsection{Coleta de Dados}
-
-\lipsum[9] Os dados foram coletados através de simulações computacionais utilizando parâmetros específicos. A Tabela \ref{tab:parametros} apresenta os principais parâmetros utilizados nas simulações.
-
-\begin{table}[H]
-\centering
-\caption{Parâmetros utilizados nas simulações computacionais}
-\label{tab:parametros}
-\begin{tabular}{@{}lccl@{}}
-\toprule
-\textbf{Parâmetro} & \textbf{Símbolo} & \textbf{Valor} & \textbf{Unidade} \\ \midrule
-Tempo de simulação & $T_{sim}$ & 1000 & s \\
-Passo de integração & $\Delta t$ & 0.01 & s \\
-Número de iterações & $N_{iter}$ & 10000 & - \\
-Tolerância & $\epsilon$ & $10^{-6}$ & - \\
-Fator de amortecimento & $\zeta$ & 0.15 & - \\
-Frequência natural & $\omega_n$ & 25.0 & rad/s \\ \bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Processamento e Análise}
-
-\lipsum[10] O processamento dos dados seguiu um protocolo rigoroso de análise estatística. Os métodos numéricos clássicos foram implementados, incluindo o método de Euler, cuja equação fundamental é expressa como:
-
-\begin{equation}
-\frac{dy}{dt} = f(t, y), \quad y(t_0) = y_0
-\label{eq:euler}
-\end{equation}
-
-onde $f(t, y)$ representa a função que descreve o sistema dinâmico. Para otimização dos parâmetros do modelo, utilizou-se a seguinte função de custo:
-
-\begin{equation}
-J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left(h_\theta(x^{(i)}) - y^{(i)}\right)^2 + \frac{\lambda}{2m}\sum_{j=1}^{n}\theta_j^2
-\label{eq:cost_function}
-\end{equation}
-
-onde $\theta$ representa os parâmetros do modelo, $m$ é o número de amostras, $\lambda$ é o parâmetro de regularização, e $h_\theta(x)$ é a hipótese do modelo. A transformada de Fourier foi aplicada para análise no domínio da frequência:
-
-\begin{equation}
-F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
-\label{eq:fourier}
-\end{equation}
+O desenvolvimento do SAVIT foi realizado por meio de uma abordagem prática e incremental, dividida em etapas de levantamento de requisitos, pesquisa tecnológica, desenvolvimento e testes da aplicação, conforme apresentado na Figura \ref{fig:metodologia}.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{imgs/img_001.jpg}
-\caption{Exemplo de visualização dos resultados obtidos através da metodologia proposta. A figura ilustra o comportamento do sistema ao longo do tempo.}
-\label{fig:exemplo}
+    \centering
+    \includegraphics[width=0.85\textwidth]{imgs/metodologia-savit.png}
+    \caption{Fluxograma da criação do SAVIT}
+    \label{fig:metodologia}
 \end{figure}
 
-\subsection{Validação do Modelo}
+No primeiro semestre de 2025, foi realizada uma pesquisa de campo presencial com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. O questionário, composto por nove perguntas objetivas e discursivas, buscou identificar a disponibilidade de equipamentos para atividades práticas e a percepção dos estudantes sobre os impactos dessa limitação no aprendizado. As respostas discursivas com significados semelhantes foram agrupadas em categorias para posterior tabulação percentual.
 
-\lipsum[11] A validação foi realizada comparando os resultados simulados com dados experimentais. O erro médio quadrático (RMSE) foi calculado através de:
+Paralelamente, foi realizada uma pesquisa bibliográfica sobre Realidade Aumentada, visão computacional e reconhecimento de gestos aplicados ao contexto educacional. A aplicação foi desenvolvida na Unity utilizando C\#, com AR Foundation e ARCore para detecção de superfícies e posicionamento dos objetos tridimensionais em dispositivos móveis Android. Os componentes utilizados, como memória RAM, placa-mãe e gabinete, foram integrados à aplicação por meio de assets tridimensionais.
 
-\begin{equation}
-RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
-\label{eq:rmse}
-\end{equation}
+A interação com os componentes virtuais utiliza MediaPipe e um sistema complementar desenvolvido em Python para processar os movimentos das mãos capturados pela câmera. A comunicação ocorre por meio de um endpoint HTTP local, permitindo reconhecer gestos para segurar, movimentar e soltar os objetos durante a experiência em Realidade Aumentada.
 
-onde $y_i$ são os valores observados e $\hat{y}_i$ são os valores preditos pelo modelo.
+Por fim, foram realizados testes funcionais e qualitativos relacionados à detecção de superfícies, reconhecimento de gestos, movimentação das peças e estabilidade geral da aplicação, visando verificar o funcionamento do protótipo e sua viabilidade técnica como ferramenta de apoio ao ensino prático de infraestrutura computacional. Nesta etapa, não foram aplicadas métricas quantitativas de desempenho ou de eficácia educacional, constituindo uma limitação a ser considerada em avaliações futuras.
 
 % Resultados e Discussões
 \section{Resultados e Discussões}
 
-\lipsum[12-13] Os resultados obtidos demonstram a eficácia da metodologia proposta. A Tabela \ref{tab:resultados} apresenta uma comparação quantitativa entre diferentes abordagens.
+Os resultados da pesquisa de campo contribuíram para validar a problemática que motivou o desenvolvimento do SAVIT. Conforme apresentado na Figura \ref{fig:pesquisa-q2}, apenas 26\% dos participantes afirmaram possuir sempre acesso adequado aos equipamentos necessários para aulas práticas. Embora 58\% tenham indicado acesso na maioria das vezes, 16\% relataram que raramente ou nunca dispõem desses recursos.
 
-\begin{table}[H]
-\centering
-\caption{Comparação de desempenho entre diferentes métodos}
-\label{tab:resultados}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-\textbf{Método} & \textbf{RMSE} & \textbf{Tempo (s)} & \textbf{Precisão (\%)} \\ \midrule
-Método Proposto & 0.0023 & 15.2 & 98.5 \\
-Euler Clássico & 0.0145 & 8.7 & 92.3 \\
-Runge-Kutta 4ª ordem & 0.0038 & 21.5 & 97.1 \\
-Método Adaptativo & 0.0031 & 18.9 & 97.8 \\ \bottomrule
-\end{tabular}
-\end{table}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{imgs/pesquisa-q2.png}
+    \caption{Disponibilidade de equipamentos para aulas práticas}
+    \label{fig:pesquisa-q2}
+\end{figure}
 
-\subsection{Análise Quantitativa}
+A análise conjunta das questões 2 e 3 permitiu compreender como essa limitação afeta a realização das atividades práticas. Entre os estudantes que relataram indisponibilidade de equipamentos, 43,6\% apontaram o revezamento de recursos como principal alternativa, enquanto 30,8\% mencionaram o uso de simuladores. Também foram relatadas a substituição das práticas por materiais teóricos, o uso de equipamentos emprestados e, em menor proporção, a ausência da atividade prática. Esses resultados indicam que, mesmo quando a aula é realizada, a disponibilidade limitada pode exigir estratégias alternativas para viabilizar a participação dos estudantes.
 
-\lipsum[14] Os dados quantitativos revelam que o método proposto apresenta melhor desempenho em termos de precisão. A relação entre os parâmetros pode ser expressa por:
+Em relação à adoção de tecnologias acessíveis, a Figura \ref{fig:pesquisa-q9} demonstra que 71,1\% dos participantes consideraram que soluções baseadas em Realidade Aumentada ou Realidade Virtual poderiam contribuir para reduzir as dificuldades decorrentes da falta de equipamentos físicos, enquanto 26,7\% responderam ``talvez'' e 2,2\% responderam negativamente.
 
-\begin{equation}
-\eta = \frac{P_{out}}{P_{in}} \times 100\% = \frac{V_{out} \cdot I_{out}}{V_{in} \cdot I_{in}} \times 100\%
-\label{eq:efficiency}
-\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{imgs/pesquisa-q9.png}
+    \caption{Percepção sobre o uso de tecnologias acessíveis em RA/RV}
+    \label{fig:pesquisa-q9}
+\end{figure}
 
-onde $\eta$ representa a eficiência do sistema, $P_{out}$ é a potência de saída e $P_{in}$ é a potência de entrada.
+Quanto ao desenvolvimento do protótipo, os testes funcionais e qualitativos demonstraram o funcionamento da detecção de superfícies em Realidade Aumentada, do posicionamento dos componentes tridimensionais e do reconhecimento de gestos para interação com as peças. A integração entre Unity, MediaPipe e Python possibilitou a manipulação dos objetos virtuais por meio dos movimentos da mão, enquanto a comunicação HTTP permitiu a troca de informações necessária durante a interação.
 
-\subsection{Análise Qualitativa}
-
-\lipsum[15] Do ponto de vista qualitativo, observou-se que o comportamento do sistema é fortemente influenciado pelas condições iniciais e pelos parâmetros de controle. A matriz de transformação pode ser representada como:
-
-\begin{equation}
-\mathbf{A} = \begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-a_{21} & a_{22} & a_{23} \\
-a_{31} & a_{32} & a_{33}
-\end{bmatrix}
-\label{eq:matrix}
-\end{equation}
-
-\subsection{Discussão}
-
-\lipsum[16-17] A análise dos resultados indica que a abordagem proposta oferece vantagens significativas em relação aos métodos tradicionais. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.
-
-Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+Apesar dos resultados técnicos obtidos, o protótipo ainda apresenta limitações relacionadas à precisão dos movimentos, ao processo de encaixe das peças e à estabilidade da aplicação em dispositivos móveis. Além disso, não foram realizadas medições quantitativas de desempenho nem avaliações experimentais de aprendizagem com estudantes. Dessa forma, os resultados obtidos demonstram a viabilidade técnica do protótipo, mas não permitem, nesta etapa, afirmar sua eficácia pedagógica.
 
 % Conclusão
 \section{Conclusão}
