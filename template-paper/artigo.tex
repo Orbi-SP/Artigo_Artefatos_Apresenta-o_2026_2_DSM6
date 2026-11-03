@@ -70,7 +70,7 @@
 
 % Informações do artigo
 \title{
-Sistema Educacional de Baixo Custo com Realidade Aumentada para o Ensino Prático de Montagem de Hardware e Redes
+Sistema Educacional com Realidade Aumentada para o Ensino Prático de Montagem de Hardware
 }
 
 \author{
@@ -95,10 +95,10 @@ Sistema Educacional de Baixo Custo com Realidade Aumentada para o Ensino Prátic
 % Resumo
 \section*{Resumo}
 
-Este trabalho apresenta o SAVIT, um sistema educacional de baixo custo baseado em Realidade Aumentada (RA), voltado ao ensino prático de montagem de hardware e redes de computadores. A proposta busca oferecer uma experiência interativa e acessível por meio de dispositivos móveis, permitindo que estudantes realizem atividades práticas sem a necessidade de laboratórios físicos ou equipamentos de alto custo. O sistema utiliza Unity, ARCore, MediaPipe e visão computacional para possibilitar a interação com componentes virtuais através de gestos capturados pela câmera do celular. Além disso, a aplicação permite posicionar peças em superfícies reais utilizando Realidade Aumentada, promovendo uma experiência de aprendizado mais intuitiva, dinâmica e imersiva. O projeto busca ampliar o acesso ao ensino técnico, contribuindo para uma aprendizagem mais moderna, acessível e alinhada às tecnologias emergentes.
+Este trabalho apresenta o SAVIT, um sistema educacional baseado em Realidade Aumentada (RA), desenvolvido para apoiar o ensino prático de montagem de hardware por meio de dispositivos móveis Android. A aplicação utiliza Unity para posicionar componentes tridimensionais em superfícies reais e permite sua manipulação por gestos reconhecidos pelo MediaPipe, integrado ao projeto por meio do MediaPipeUnityPlugin. O sistema apresenta um tutorial com instruções em texto e áudio, orienta o usuário durante as etapas de montagem e fornece feedback textual sobre os encaixes realizados. Além disso, conta com validação do posicionamento dos componentes, sistema de pontuação e ranking dos participantes. A proposta busca oferecer uma alternativa interativa e acessível para complementar atividades práticas de infraestrutura computacional, reduzindo a dependência de equipamentos físicos e laboratórios especializados.
 
 \vspace{0.3cm}
-\noindent\textit{\textbf{Palavras-chave:}} Sistema Educacional; Realidade Aumentada; Visão Computacional; Redes de Computadores.
+\noindent\textit{\textbf{Palavras-chave:}} Realidade Aumentada; Ensino de Hardware; Visão Computacional; Reconhecimento de Gestos.
 
 \vspace{0.5cm}
 \noindent\rule{\textwidth}{0.5pt}
@@ -108,10 +108,10 @@ Este trabalho apresenta o SAVIT, um sistema educacional de baixo custo baseado e
 % Abstract
 \section*{Abstract}
 
-This work presents SAVIT, a low-cost educational system based on Augmented Reality (AR), designed for practical teaching of computer hardware assembly and networking. The proposal aims to provide an interactive and accessible experience through mobile devices, allowing students to perform practical activities without the need for physical laboratories or expensive equipment. The system was developed using Unity, ARCore, MediaPipe, and computer vision techniques to enable interaction with virtual components through gestures captured by the smartphone camera. In addition, the application allows users to place parts on real-world surfaces using Augmented Reality, promoting a more intuitive, dynamic, and immersive learning experience. The project seeks to expand access to technical education, contributing to a more modern, accessible, and technology-aligned learning process.
+This paper presents SAVIT, an educational system based on Augmented Reality (AR), developed to support practical computer hardware assembly instruction through Android mobile devices. The application uses Unity to position three-dimensional components on real-world surfaces and allows users to manipulate them through gestures recognized by MediaPipe, integrated into the project using MediaPipeUnityPlugin. The system features a tutorial with text instructions and audio explanations, guides users through the assembly stages, and provides textual feedback on component placement. In addition, it includes component placement validation, a scoring system, and a participant ranking. The proposal aims to provide an interactive and accessible alternative to complement practical activities in computer infrastructure education, reducing dependence on physical equipment and specialized laboratories.
 
 \vspace{0.3cm}
-\noindent\textit{\textbf{Keywords:}} Educational System; Augmented Reality; Computer Vision; Computer Networks.
+\noindent\textit{\textbf{Keywords:}} Augmented Reality; Hardware Education; Computer Vision; Gesture Recognition.
 
 \vspace{0.5cm}
 \noindent\rule{\textwidth}{0.5pt}
@@ -121,32 +121,30 @@ This work presents SAVIT, a low-cost educational system based on Augmented Reali
 % Introdução
 \section{Introdução}
 
-O avanço das tecnologias digitais vem transformando significativamente os métodos de ensino, especialmente em áreas técnicas que exigem atividades práticas, como infraestrutura computacional, montagem de hardware e redes de computadores. Entretanto, muitas instituições de ensino ainda enfrentam dificuldades relacionadas à limitação de laboratórios físicos, falta de equipamentos adequados e altos custos de manutenção, comprometendo a experiência prática dos estudantes.
+O avanço das tecnologias digitais vem transformando os métodos de ensino, especialmente em áreas técnicas que exigem atividades práticas, como a infraestrutura computacional e a montagem de hardware. Entretanto, muitas instituições de ensino ainda enfrentam dificuldades relacionadas à disponibilidade de laboratórios físicos, à quantidade de equipamentos adequados e aos custos de aquisição e manutenção desses recursos, o que pode limitar as oportunidades de aprendizagem prática dos estudantes.
 
-No primeiro semestre de 2025, foi realizada uma pesquisa de campo com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. Os resultados reforçaram a problemática investigada: apenas 26\% dos participantes afirmaram sempre possuir acesso adequado a equipamentos para aulas práticas, enquanto 48\% relataram prejuízos totais ou parciais no aprendizado devido à ausência desses recursos. Além disso, 71\% consideraram que tecnologias acessíveis baseadas em Realidade Aumentada ou Realidade Virtual poderiam contribuir para reduzir as dificuldades decorrentes da limitação de infraestrutura física.
+No primeiro semestre de 2025, foi realizada uma pesquisa de campo com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. Os resultados reforçaram a problemática investigada: apenas 26\% dos participantes afirmaram sempre possuir acesso adequado a equipamentos para aulas práticas, enquanto 58\% relataram que essa disponibilidade ocorria na maioria das vezes. Além disso, 71,1\% consideraram que tecnologias acessíveis baseadas em Realidade Aumentada ou Realidade Virtual poderiam contribuir para reduzir as dificuldades decorrentes da limitação de infraestrutura física.
 
-Nesse contexto, a utilização de tecnologias emergentes, como a Realidade Aumentada (RA), surge como uma alternativa capaz de complementar o processo de aprendizagem de maneira interativa e acessível. Diferentemente da Realidade Virtual, que cria ambientes totalmente digitais, a Realidade Aumentada permite integrar objetos virtuais ao ambiente físico real, proporcionando maior contextualização e acessibilidade ao usuário por meio de dispositivos móveis \cite{tori2006}.
+Nesse contexto, a Realidade Aumentada (RA) apresenta-se como uma alternativa tecnológica capaz de complementar o processo de aprendizagem por meio da integração de elementos virtuais ao ambiente físico. Diferentemente da Realidade Virtual, que cria ambientes totalmente digitais, a RA permite visualizar e interagir com objetos tridimensionais inseridos no espaço real, utilizando dispositivos como smartphones \cite{tori2006}.
 
-Com base nesse cenário, o presente trabalho apresenta o SAVIT, um sistema educacional baseado em Realidade Aumentada, desenvolvido para dispositivos móveis Android. A aplicação permite que os usuários realizem a simulação interativa de montagem de componentes computacionais utilizando gestos capturados pela câmera do celular, promovendo uma experiência prática e intuitiva sem a necessidade de equipamentos físicos reais.
+Com base nesse cenário, o presente trabalho apresenta o SAVIT (Sistema de Aprendizado Virtual para Infraestrutura Tecnológica), uma aplicação educacional desenvolvida para dispositivos móveis Android. O sistema utiliza Realidade Aumentada para posicionar componentes computacionais tridimensionais em superfícies reais e permite que o usuário interaja com esses elementos por meio de gestos reconhecidos pela câmera do dispositivo.
 
-Além disso, o sistema utiliza recursos como visão computacional, reconhecimento de gestos, MediaPipe e ARCore para possibilitar a interação entre o usuário e os componentes tridimensionais posicionados em superfícies reais. Dessa forma, o projeto busca ampliar o acesso ao aprendizado técnico, oferecendo uma solução de baixo custo voltada ao ensino prático de hardware e redes de computadores.
+A aplicação também disponibiliza um tutorial com instruções em texto e áudio, orienta o usuário durante as etapas de montagem e apresenta feedback textual sobre os encaixes realizados. Além disso, incorpora mecanismos de validação de posicionamento, pontuação e classificação dos participantes. Dessa forma, o SAVIT busca oferecer uma alternativa interativa e acessível para complementar o ensino prático de montagem de hardware, reduzindo a dependência de equipamentos físicos e laboratórios especializados.
 
 
 % Objetivo
 \section{Objetivo}
 
-O objetivo do SAVIT é proporcionar aos estudantes um ambiente de aprendizado prático baseado em Realidade Aumentada, permitindo a simulação da montagem de componentes computacionais de forma interativa e acessível. A aplicação foi desenvolvida para dispositivos móveis Android, utilizando a câmera do celular para detectar superfícies reais e posicionar objetos tridimensionais no ambiente físico.
-
-Além disso, o sistema utiliza reconhecimento de gestos para possibilitar a movimentação e interação com as peças virtuais, promovendo uma experiência educacional dinâmica e intuitiva. O projeto busca reduzir a dependência de laboratórios físicos e equipamentos de alto custo, ampliando o acesso ao ensino prático na área de infraestrutura computacional.
+O objetivo do SAVIT é desenvolver uma aplicação educacional para dispositivos móveis Android, baseada em Realidade Aumentada, que permita aos estudantes praticar a montagem de componentes computacionais em um ambiente virtual integrado ao espaço físico. A proposta busca complementar o ensino de hardware por meio de uma experiência interativa, reduzindo a dependência de equipamentos físicos e laboratórios especializados.
 
 Entre os objetivos específicos do projeto, destacam-se:
 
 \begin{itemize}
-    \item Desenvolver uma aplicação mobile baseada em Realidade Aumentada para o ensino prático de hardware;
-    \item Permitir a interação com componentes tridimensionais através de gestos manuais;
-    \item Utilizar visão computacional para reconhecimento e movimentação de peças;
-    \item Oferecer uma solução educacional acessível utilizando dispositivos móveis compatíveis com ARCore;
-    \item Simular atividades práticas de montagem computacional sem necessidade de equipamentos físicos reais.
+    \item Desenvolver uma aplicação mobile baseada em Realidade Aumentada para apoiar o ensino prático de montagem de hardware;
+    \item Permitir o posicionamento e a manipulação de componentes computacionais tridimensionais em superfícies reais;
+    \item Implementar o reconhecimento de gestos manuais para possibilitar a interação com os componentes virtuais;
+    \item Disponibilizar um tutorial com instruções em texto e áudio para orientar o usuário durante as etapas de montagem;
+    \item Implementar a validação dos encaixes, feedback textual, sistema de pontuação e ranking dos participantes.
 \end{itemize}
 
 % Estado da Arte
@@ -154,14 +152,16 @@ Entre os objetivos específicos do projeto, destacam-se:
 
 A Realidade Aumentada (RA) vem sendo utilizada como ferramenta de apoio ao ensino técnico e profissionalizante, especialmente em atividades que envolvem visualização espacial, interação tridimensional e treinamento prático. Estudos apontam que sua utilização pode favorecer o engajamento, a compreensão de conteúdos e a aproximação entre conhecimentos teóricos e situações práticas.
 
-No artigo \textit{"Development of Augmented Reality Learning Media for Computer Network Topics"}, Galy, Miru e Riska \cite{galy2026} desenvolveram um aplicativo móvel em Realidade Aumentada para o ensino prático e visual de redes de computadores. A solução utiliza marcadores no smartphone para permitir a exploração tridimensional de topologias e equipamentos de rede. Os resultados demonstram que a projeção de ativos em 3D melhora significativamente o engajamento e a apreensão de conceitos abstratos, embora o escopo seja direcionado especificamente a redes de computadores, diferindo da montagem física de componentes de hardware.
+No artigo \textit{``Development of Augmented Reality Learning Media for Computer Network Topics in Junior High School''}, Riska, Mappalotteng e Mutmainna \cite{galy2026} desenvolveram um recurso educacional baseado em Realidade Aumentada para o ensino de redes de computadores no nível escolar. O estudo investiga o uso de recursos tridimensionais para apoiar a compreensão de conteúdos relacionados a redes, diferenciando-se do SAVIT por abordar conceitos de redes de computadores, enquanto a proposta deste trabalho está direcionada à montagem de componentes de hardware.
 
-No trabalho \textit{"First-Year Computer Science and Informatics Students' Experiences of an Immersive Virtual Reality Application for Computer Hardware Assembly"}, Barkhuizen, Botha e De Wet \cite{barkhuizen2026} avaliaram o uso de um simulador de montagem de computadores em Realidade Virtual imersiva para alunos ingressantes no curso de Ciência da Computação. O estudo aborda diretamente as dificuldades enfrentadas por instituições com limitações de recursos e laboratórios físicos, demonstrando os benefícios de ambientes virtuais simulados. Diferentemente de abordagens móveis em RA, a solução proposta exige óculos imersivos de Realidade Virtual, o que pode restringir a acessibilidade em determinados contextos educacionais.
+No trabalho \textit{``First-Year Computer Science and Informatics Students' Experiences of an Immersive Virtual Reality Application for Computer Hardware Assembly''}, Barkhuizen, Botha e De Wet \cite{barkhuizen2026} investigaram as experiências de estudantes ingressantes em Ciência da Computação e Informática com uma aplicação imersiva de Realidade Virtual voltada à montagem de computadores. O estudo aborda a utilização de ambientes virtuais como alternativa para atividades práticas relacionadas ao hardware. Diferentemente de soluções móveis em Realidade Aumentada, a aplicação utiliza dispositivos de Realidade Virtual imersiva, o que representa uma diferença importante em relação à proposta do SAVIT.
 
-No estudo \textit{"AI-Assisted AR Assembly: Object Recognition and Computer Vision"}, Kyaw et al. \cite{kyaw2026} exploraram a integração entre visão computacional, reconhecimento automático de objetos e guias passo a passo em Realidade Aumentada para orientar processos de montagem. O estudo evidencia o estado da arte no processamento de vídeo, permitindo a interação assistida por Inteligência Artificial e o encaixe preciso de partes virtuais e físicas, servindo como importante embasamento técnico para aplicações interativas.
+No estudo \textit{``Augmented Assembly: Object Recognition and Hand Tracking for Adaptive Assembly Instructions in Augmented Reality''}, Kyaw et al. \cite{kyaw2026} apresentam uma abordagem de montagem assistida por Realidade Aumentada, combinando reconhecimento de objetos, rastreamento das mãos e instruções adaptativas. O trabalho contribui para a discussão sobre o uso de visão computacional na orientação de processos de montagem, apresentando recursos relacionados à interação entre o usuário e elementos virtuais no ambiente real.
 
-Além das aplicações educacionais, no artigo \textit{"MediaPipe: A Framework for Building Perception Pipelines"}, Lugaresi et al. \cite{lugaresi2019} apresentam a ferramenta MediaPipe, que fornece recursos de visão computacional capazes de reconhecer e rastrear movimentos das mãos em tempo real. Essa abordagem permite desenvolver formas de interação mais naturais com objetos virtuais, reduzindo a necessidade de dispositivos físicos adicionais.
+Além das aplicações educacionais, no artigo \textit{``MediaPipe: A Framework for Building Perception Pipelines''}, Lugaresi et al. \cite{lugaresi2019} apresentam o MediaPipe, um framework destinado à construção de pipelines de percepção e processamento de dados multimodais. Sua estrutura permite integrar soluções de visão computacional e processamento em tempo real, constituindo uma referência tecnológica relacionada à integração utilizada no SAVIT.
+
 A Tabela \ref{tab:estado-arte} sintetiza as principais características dos trabalhos analisados e evidencia o diferencial proposto pelo SAVIT.
+
 
 \begin{table}[H]
 \centering
@@ -173,28 +173,28 @@ A Tabela \ref{tab:estado-arte} sintetiza as principais características dos trab
 \textbf{Trabalho} & \textbf{Aplicação} & \textbf{Contribuição} & \textbf{Limitação / Diferencial} \\
 \hline
 
-Galy et al. (2026) &
-Ensino prático de redes com RA &
-Melhora o engajamento com projeção 3D de topologias &
-Focado em redes, não propondo a montagem de hardware em si \\
+Riska et al. (2026) &
+Ensino de redes de computadores com RA &
+Visualização tridimensional de topologias e equipamentos de rede &
+Foco no ensino de redes, sem abordar diretamente a montagem de hardware \\
 \hline
 
 Barkhuizen et al. (2026) &
-Simulador VR de montagem de computadores &
-Suprime a falta de laboratórios e equipamentos físicos &
-Exige hardware de VR imersiva, reduzindo a acessibilidade \\
+Aplicação de RV para montagem de computadores &
+Investigação do uso de ambientes imersivos no ensino de montagem de hardware &
+Exige dispositivos de Realidade Virtual imersiva \\
 \hline
 
 Kyaw et al. (2026) &
-Guias de montagem AR com visão computacional &
-Encaixe preciso de peças virtuais e físicas assistido por IA &
-Foco técnico em reconhecimento de objetos em processos guiados \\
+Instruções adaptativas de montagem em RA &
+Integração de reconhecimento de objetos e rastreamento das mãos &
+Abordagem voltada à orientação de processos de montagem por visão computacional \\
 \hline
-    
+
 MediaPipe (Lugaresi et al., 2019) &
-Reconhecimento de mãos com MediaPipe &
-Permite rastreamento e interação gestual em tempo real &
-Framework de visão computacional, não uma solução educacional completa \\
+Framework para pipelines de percepção &
+Oferece uma estrutura para integração de soluções de visão computacional &
+Não constitui, isoladamente, uma solução educacional completa \\
 \hline
 
 SAVIT &
@@ -211,38 +211,51 @@ Nesse contexto, o SAVIT diferencia-se por integrar Realidade Aumentada, visão c
 % Metodologia
 \section{Metodologia}
 
-O desenvolvimento do SAVIT foi realizado por meio de uma abordagem prática e incremental, dividida em etapas de levantamento de requisitos, pesquisa tecnológica, desenvolvimento e testes da aplicação, conforme apresentado na Figura \ref{fig:metodologia}.
+O desenvolvimento do SAVIT foi conduzido por meio de uma abordagem prática e incremental, organizada em oito etapas, conforme apresentado na Figura \ref{fig:metodologia}: (1) pesquisa de campo; (2) pesquisa bibliográfica; (3) levantamento de requisitos e planejamento; (4) desenvolvimento da aplicação; (5) implementação da Realidade Aumentada; (6) integração do MediaPipe; (7) implementação das etapas de montagem e dos recursos de interação; e (8) realização de testes funcionais.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{imgs/metodologia-savit.png}
-    \caption{Fluxograma da criação do SAVIT}
+    \includegraphics[width=\textwidth]{imgs/metodologia-savit.png}
+    \caption{Fluxograma da metodologia de desenvolvimento do SAVIT}
     \label{fig:metodologia}
 \end{figure}
 
-No primeiro semestre de 2025, foi realizada uma pesquisa de campo presencial com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. O questionário, composto por nove perguntas objetivas e discursivas, buscou identificar a disponibilidade de equipamentos para atividades práticas e a percepção dos estudantes sobre os impactos dessa limitação no aprendizado. As respostas discursivas com significados semelhantes foram agrupadas em categorias para posterior tabulação percentual.
+A primeira etapa, representada pelo número 1 na Figura \ref{fig:metodologia}, consistiu na realização de uma pesquisa de campo presencial, no primeiro semestre de 2025, com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. O questionário, composto por nove perguntas objetivas e discursivas, buscou identificar a disponibilidade de equipamentos para atividades práticas e a percepção dos estudantes sobre os impactos dessa limitação no aprendizado. As respostas discursivas com significados semelhantes foram agrupadas em categorias para posterior tabulação percentual.
 
-Paralelamente, foi realizada uma pesquisa bibliográfica sobre Realidade Aumentada, visão computacional e reconhecimento de gestos aplicados ao contexto educacional. A aplicação foi desenvolvida na Unity utilizando C\#, com AR Foundation e ARCore para detecção de superfícies e posicionamento dos objetos tridimensionais em dispositivos móveis Android. Os componentes utilizados, como memória RAM, placa-mãe e gabinete, foram integrados à aplicação por meio de assets tridimensionais.
+Na segunda etapa, indicada pelo número 2 na Figura \ref{fig:metodologia}, foi realizada uma pesquisa bibliográfica sobre Realidade Aumentada, visão computacional, reconhecimento de gestos e aplicações dessas tecnologias no ensino técnico. Essa investigação contribuiu para a identificação de soluções relacionadas ao projeto e para a fundamentação das escolhas tecnológicas.
 
-A interação com os componentes virtuais utiliza MediaPipe e um sistema complementar desenvolvido em Python para processar os movimentos das mãos capturados pela câmera. A comunicação ocorre por meio de um endpoint HTTP local, permitindo reconhecer gestos para segurar, movimentar e soltar os objetos durante a experiência em Realidade Aumentada.
+A terceira etapa, representada pelo número 3 na Figura \ref{fig:metodologia}, compreendeu o levantamento dos requisitos funcionais e o planejamento da aplicação. Foram definidos os componentes computacionais utilizados, a sequência de montagem, os mecanismos de interação e os recursos necessários para orientar o usuário durante a atividade.
 
-Por fim, foram realizados testes funcionais e qualitativos relacionados à detecção de superfícies, reconhecimento de gestos, movimentação das peças e estabilidade geral da aplicação, visando verificar o funcionamento do protótipo e sua viabilidade técnica como ferramenta de apoio ao ensino prático de infraestrutura computacional. Nesta etapa, não foram aplicadas métricas quantitativas de desempenho ou de eficácia educacional, constituindo uma limitação a ser considerada em avaliações futuras.
+Na quarta etapa, indicada pelo número 4 na Figura \ref{fig:metodologia}, foi realizado o desenvolvimento da aplicação na Unity, utilizando a linguagem C\#. Também foram integrados os modelos tridimensionais dos componentes computacionais e implementadas as funcionalidades que compõem o sistema.
 
-% Resultados e Discussões
-\section{Resultados e Discussões}
+A quinta etapa, representada pelo número 5 na Figura \ref{fig:metodologia}, correspondeu à implementação da Realidade Aumentada. Essa funcionalidade permite detectar superfícies planas por meio da câmera do dispositivo Android e posicionar os componentes virtuais no ambiente físico. O usuário pode ajustar a posição e a rotação dos elementos antes de confirmar sua disposição e iniciar a montagem.
 
-Os resultados da pesquisa de campo contribuíram para corroborar a problemática que motivou o desenvolvimento do SAVIT. Conforme apresentado na Figura \ref{fig:pesquisa-q2}, apenas 26\% dos participantes afirmaram possuir sempre acesso adequado aos equipamentos necessários para aulas práticas. Embora 58\% tenham indicado acesso na maioria das vezes, 16\% relataram que raramente ou nunca dispõem desses recursos.
+Na sexta etapa, indicada pelo número 6 na Figura \ref{fig:metodologia}, foi realizada a integração do MediaPipe por meio do MediaPipeUnityPlugin. O reconhecimento dos movimentos das mãos utiliza scripts em Python executados pelo plugin, enquanto a aplicação e suas funcionalidades são controladas pela Unity, por meio de C\#. Essa integração possibilita a manipulação dos componentes virtuais por meio de gestos realizados diante da câmera do dispositivo.
+
+A sétima etapa, representada pelo número 7 na Figura \ref{fig:metodologia}, envolveu a implementação das etapas de montagem e dos recursos de interação. Foram desenvolvidos mecanismos de validação dos encaixes e feedback textual para indicar ações corretas ou incorretas. Também foram incorporados um tutorial com instruções em texto e explicações em áudio, um sistema de pontuação e um ranking dos participantes.
+
+Por fim, a oitava etapa, indicada pelo número 8 na Figura \ref{fig:metodologia}, consistiu na realização de testes funcionais em dispositivos Android. Os testes tiveram como objetivo verificar o funcionamento dos recursos implementados, incluindo a detecção de superfícies, o reconhecimento de gestos, o posicionamento e a validação dos componentes, o tutorial, o feedback e o sistema de pontuação. Não foram realizadas avaliações com usuários externos nem testes quantitativos de eficácia educacional nesta etapa, sendo essas atividades consideradas possibilidades para trabalhos futuros.
+
+
+% Resultados e Discussão
+\section{Resultados e Discussão}
+
+Os resultados obtidos durante o desenvolvimento do SAVIT são apresentados em duas perspectivas: os dados coletados na pesquisa de campo, que contribuíram para identificar as dificuldades relacionadas à disponibilidade de equipamentos para atividades práticas, e os resultados do desenvolvimento e dos testes funcionais da aplicação.
+
+A pesquisa de campo, realizada com cinquenta estudantes da FATEC Registro no primeiro semestre de 2025, permitiu identificar aspectos relacionados ao acesso a equipamentos e à percepção dos participantes sobre as limitações de infraestrutura nas atividades práticas. Os resultados das perguntas selecionadas são apresentados a seguir.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{imgs/pesquisa-q2.png}
+    \includegraphics[width=0.85\textwidth]{imgs/pesquisa-q2.png}
     \caption{Disponibilidade de equipamentos para aulas práticas}
     \label{fig:pesquisa-q2}
 \end{figure}
 
+Conforme apresentado na Figura \ref{fig:pesquisa-q2}, 26\% dos participantes afirmaram sempre possuir acesso adequado a equipamentos para aulas práticas, enquanto 58\% relataram que essa disponibilidade ocorria na maioria das vezes. Outros 8\% responderam raramente e 8\% nunca, evidenciando que parte dos estudantes enfrenta limitações no acesso a esses recursos.
+
 A análise conjunta das questões 2 e 3 permitiu compreender como essa limitação afeta a realização das atividades práticas. Entre os estudantes que relataram indisponibilidade de equipamentos, 43,6\% apontaram o revezamento de recursos como principal alternativa, enquanto 30,8\% mencionaram o uso de simuladores. Também foram relatadas a substituição das práticas por materiais teóricos, o uso de equipamentos emprestados e, em menor proporção, a ausência da atividade prática. Esses resultados indicam que, mesmo quando a aula é realizada, a disponibilidade limitada pode exigir estratégias alternativas para viabilizar a participação dos estudantes.
 
-Em relação à adoção de tecnologias acessíveis, a Figura \ref{fig:pesquisa-q9} demonstra que 71,1\% dos participantes consideraram que soluções baseadas em Realidade Aumentada ou Realidade Virtual poderiam contribuir para reduzir as dificuldades decorrentes da falta de equipamentos físicos, enquanto 26,7\% responderam ``talvez'' e 2,2\% responderam negativamente.
+A percepção dos participantes sobre o uso de tecnologias acessíveis também foi investigada. A Figura \ref{fig:pesquisa-q9} apresenta as respostas referentes à possibilidade de soluções baseadas em Realidade Aumentada ou Realidade Virtual contribuírem para reduzir as dificuldades decorrentes da falta de equipamentos físicos.
 
 \begin{figure}[H]
     \centering
@@ -251,9 +264,11 @@ Em relação à adoção de tecnologias acessíveis, a Figura \ref{fig:pesquisa-
     \label{fig:pesquisa-q9}
 \end{figure}
 
-Quanto ao desenvolvimento da aplicação, os testes funcionais e qualitativos demonstraram o funcionamento das principais etapas previstas para o protótipo. O SAVIT apresenta um menu inicial que permite iniciar ou encerrar a experiência, seguido pela calibração da superfície e pelo posicionamento dos componentes tridimensionais no ambiente de Realidade Aumentada.
+Conforme os dados apresentados na Figura \ref{fig:pesquisa-q9}, 71,1\% dos participantes responderam que essas tecnologias poderiam contribuir para reduzir as dificuldades relacionadas à falta de equipamentos físicos, enquanto 26,7\% responderam ``talvez'' e 2,2\% responderam negativamente. Esses dados demonstram uma percepção favorável dos participantes em relação ao potencial dessas tecnologias como recursos complementares ao ensino prático.
 
-As Figuras \ref{fig:menu-savit} e \ref{fig:posicionamento-savit} apresentam, respectivamente, o menu inicial e a etapa de posicionamento dos componentes.
+Quanto ao desenvolvimento da aplicação, foram realizados testes funcionais pela equipe em dispositivos Android, com o objetivo de verificar o funcionamento dos recursos implementados. O SAVIT apresenta um menu inicial com as opções de iniciar a experiência ou sair da aplicação. Ao iniciar, o usuário recebe instruções para apontar a câmera para uma superfície plana, permitindo que os componentes tridimensionais sejam posicionados no ambiente físico por meio da Realidade Aumentada.
+
+As Figuras \ref{fig:menu-savit} e \ref{fig:posicionamento-savit} apresentam, respectivamente, o menu inicial e a etapa de posicionamento dos componentes no ambiente real.
 
 \begin{figure}[H]
     \centering
@@ -267,49 +282,63 @@ As Figuras \ref{fig:menu-savit} e \ref{fig:posicionamento-savit} apresentam, res
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imgs/savit-posicionamento-pecas.jpg}
-        \caption{Posicionamento das peças em RA}
+        \caption{Ajuste da posição e rotação dos componentes em RA}
         \label{fig:posicionamento-savit}
     \end{minipage}
 \end{figure}
 
-Após o posicionamento, os modelos tridimensionais de memória RAM, placa-mãe e gabinete permanecem fixados no ambiente real, possibilitando sua visualização e posterior manipulação. A interação é realizada por reconhecimento gestual: ao fechar a mão, o sistema interpreta o gesto como a captura do componente, permitindo sua movimentação pelo espaço tridimensional.
+Após a detecção da superfície, o usuário pode ajustar a posição e a rotação dos componentes virtuais. A opção de fixação permite visualizar os elementos posicionados enquanto a câmera é movimentada, e o usuário pode reposicioná-los antes de confirmar a disposição e iniciar a atividade de montagem.
+
+A aplicação disponibiliza modelos tridimensionais de componentes computacionais, incluindo memória RAM, placa-mãe, gabinete, fonte de alimentação, disco rígido (HD), cabos de conexão, monitor e cabo VGA. Esses elementos compõem as etapas de montagem e conexão propostas pelo sistema.
 
 \begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imgs/savit-modelagem-3d.jpg}
-        \caption{Componentes tridimensionais posicionados}
+        \caption{Componentes tridimensionais no ambiente de RA}
         \label{fig:modelagem-savit}
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imgs/savit-manipulacao-gestos.jpg}
-        \caption{Manipulação de componente por gesto}
+        \caption{Manipulação de componentes por gestos}
         \label{fig:gestos-savit}
     \end{minipage}
 \end{figure}
 
-Durante a montagem, o usuário movimenta a peça virtual até a região correspondente e realiza o gesto de abrir a mão para soltá-la. Quando o componente se encontra na área de encaixe prevista, o sistema realiza o posicionamento da peça no local correspondente. Essa funcionalidade encontra-se implementada, embora ainda apresente limitações de precisão durante determinadas interações.
+A interação com os componentes é realizada por meio do reconhecimento de gestos manuais. O fechamento da mão é interpretado pelo sistema como o comando para agarrar um componente, enquanto a abertura da mão permite soltá-lo. Durante cada etapa, somente o componente correspondente à atividade atual pode ser manipulado, orientando o usuário na sequência de montagem.
+
+A montagem contempla a fixação do gabinete, o encaixe da placa-mãe e da memória RAM, a instalação da fonte de alimentação e do disco rígido, além da conexão dos respectivos cabos. Posteriormente, o usuário posiciona o monitor e realiza a conexão do cabo VGA, primeiro ao computador e depois ao monitor. O sistema verifica o posicionamento dos componentes e fornece feedback textual para indicar se a ação realizada está correta ou incorreta.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.42\textwidth]{imgs/savit-encaixe-componentes.jpg}
-    \caption{Encaixe dos componentes por interação gestual}
+    \caption{Validação do encaixe dos componentes}
     \label{fig:encaixe-savit}
 \end{figure}
 
-Apesar dos resultados técnicos obtidos, o protótipo ainda apresenta limitações relacionadas à precisão do reconhecimento gestual, da movimentação e do encaixe dos componentes, além de oportunidades de melhoria quanto à estabilidade e ao desempenho da aplicação em diferentes dispositivos móveis. Os testes realizados foram funcionais e qualitativos, não havendo, nesta etapa, medições quantitativas de desempenho ou avaliações experimentais de aprendizagem com estudantes. Dessa forma, os resultados demonstram a viabilidade técnica do protótipo, mas ainda não permitem afirmar sua eficácia pedagógica.
+
+Além das etapas de montagem, o SAVIT possui um tutorial com instruções exibidas na tela e explicações em áudio, que orientam o usuário durante a execução das atividades. O sistema também incorpora um mecanismo de pontuação, iniciado em 500 pontos, com desconto de 10 pontos a cada erro de encaixe. O tempo total utilizado para concluir a montagem também é registrado. Ao finalizar todas as etapas, o participante informa seu nome e pode visualizar sua posição no ranking. A classificação considera a pontuação obtida e, em caso de empate, utiliza o menor tempo total de montagem como critério de desempate, favorecendo o participante que concluir a atividade em menos tempo.
+
+Os testes funcionais realizados pela equipe em dispositivos Android permitiram verificar o funcionamento dos principais recursos implementados, incluindo a detecção de superfícies planas, o posicionamento dos componentes, o reconhecimento de gestos, a validação dos encaixes, as instruções do tutorial, o feedback textual e o sistema de pontuação e ranking.
+
+Apesar dos resultados técnicos obtidos, não foram realizadas avaliações com usuários externos nem testes quantitativos de eficácia educacional nesta etapa. Dessa forma, os resultados permitem apresentar as funcionalidades implementadas e demonstrar o funcionamento técnico do protótipo, mas ainda não permitem afirmar que sua utilização proporciona melhoria na aprendizagem. A avaliação da experiência dos estudantes e dos possíveis impactos educacionais permanece como uma possibilidade para trabalhos futuros.
+
 
 % Conclusão
 \section{Conclusão}
 
-O desenvolvimento do SAVIT demonstrou a viabilidade técnica da utilização de Realidade Aumentada e visão computacional como suporte à simulação de atividades práticas de montagem de hardware. O protótipo desenvolvido possibilita o posicionamento de componentes tridimensionais em superfícies reais e a interação com esses objetos por meio de gestos capturados pela câmera do dispositivo móvel.
+O desenvolvimento do SAVIT permitiu implementar uma aplicação educacional para dispositivos móveis Android, baseada em Realidade Aumentada, com o objetivo de complementar o ensino prático de montagem de hardware. A solução possibilita posicionar componentes computacionais tridimensionais em superfícies reais e interagir com eles por meio de gestos manuais reconhecidos pelo MediaPipe, integrado à Unity por meio do MediaPipeUnityPlugin.
 
-A pesquisa de campo realizada com estudantes da FATEC Registro também evidenciou limitações no acesso a equipamentos para atividades práticas e uma percepção favorável ao uso de tecnologias acessíveis como alternativa de apoio ao ensino. Esses resultados reforçam a relevância da problemática abordada pelo projeto, embora não representem uma avaliação da eficácia pedagógica do SAVIT.
+A aplicação contempla diferentes etapas de montagem e conexão de componentes computacionais, além de recursos de orientação e interação, como tutorial com instruções em texto e áudio, validação dos encaixes e feedback textual sobre as ações realizadas. Também foram implementados mecanismos de pontuação e ranking, nos quais o participante inicia com 500 pontos, perde 10 pontos a cada erro de encaixe e tem o tempo total de montagem registrado. Em caso de empate na pontuação, o menor tempo de conclusão determina a melhor classificação.
 
-Como limitações, destacam-se a ausência de métricas quantitativas de desempenho e de avaliações experimentais de aprendizagem, além da necessidade de aprimorar a precisão do reconhecimento gestual, da movimentação e do encaixe dos componentes e a estabilidade da aplicação em diferentes dispositivos móveis. Como trabalhos futuros, pretende-se ampliar a montagem do computador com novos componentes, aperfeiçoar a experiência em Realidade Aumentada e realizar avaliações com usuários para investigar a usabilidade e a contribuição da solução para o processo de aprendizagem.
+A pesquisa de campo realizada com cinquenta estudantes da FATEC Registro evidenciou dificuldades relacionadas à disponibilidade de equipamentos para atividades práticas e uma percepção favorável ao uso de tecnologias acessíveis como recursos complementares ao ensino. Esses resultados reforçam a relevância da problemática investigada e fundamentam a proposta do SAVIT, mas não constituem uma avaliação de sua eficácia pedagógica.
+
+Os testes funcionais realizados pela equipe em dispositivos Android permitiram verificar o funcionamento dos principais recursos implementados. Entretanto, ainda não foram realizadas avaliações com usuários externos nem estudos quantitativos para mensurar a usabilidade, o desempenho ou os possíveis impactos da aplicação no processo de aprendizagem. Dessa forma, não é possível afirmar, nesta etapa, que o uso do SAVIT proporciona melhoria no aprendizado dos estudantes.
+
+Como trabalhos futuros, pretende-se realizar avaliações com estudantes e professores, investigar a experiência de uso da aplicação e analisar sua contribuição para o ensino de montagem de hardware. Também poderão ser exploradas melhorias na experiência de interação e a ampliação das atividades e dos componentes disponíveis. Essas iniciativas permitirão avaliar a solução em contextos educacionais reais e identificar oportunidades de evolução do sistema.
 
 % Agradecimentos
 \section*{Agradecimentos}
