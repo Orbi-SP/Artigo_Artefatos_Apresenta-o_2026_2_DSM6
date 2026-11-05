@@ -95,7 +95,7 @@ Sistema Educacional de Baixo Custo com Realidade Aumentada para o Ensino de Mont
 % Resumo
 \section*{Resumo}
 
-Este trabalho apresenta o SAVIT, um sistema educacional baseado em Realidade Aumentada (RA), desenvolvido para apoiar o ensino prático de montagem de hardware por meio de dispositivos móveis Android. A aplicação utiliza Unity para posicionar componentes tridimensionais em superfícies reais e permite sua manipulação por gestos reconhecidos pelo MediaPipe, integrado ao projeto por meio do MediaPipeUnityPlugin. O sistema apresenta um tutorial com instruções em texto e áudio, orienta o usuário durante as etapas de montagem e fornece feedback textual sobre os encaixes realizados. Além disso, conta com validação do posicionamento dos componentes, sistema de pontuação e ranking dos participantes. A proposta busca oferecer uma alternativa interativa e acessível para complementar atividades práticas de infraestrutura computacional, reduzindo a dependência de equipamentos físicos e laboratórios especializados.
+Este trabalho apresenta o SAVIT, um sistema educacional baseado em Realidade Aumentada (RA), desenvolvido para apoiar o ensino prático de montagem de hardware por meio de dispositivos móveis Android. A aplicação foi desenvolvida na Unity e utiliza o MediaPipe, integrado por meio do MediaPipeUnityPlugin, para reconhecer gestos manuais e permitir a manipulação dos componentes tridimensionais posicionados em superfícies reais. O acesso à aplicação é realizado por meio de uma conta criada no website do projeto. Após a autenticação, o sistema apresenta um tutorial com instruções em texto e áudio, orienta o usuário durante as etapas de montagem e fornece feedback textual sobre os encaixes realizados. Além disso, conta com validação do posicionamento dos componentes, sistema de pontuação e ranking dos participantes. A proposta busca oferecer uma alternativa interativa e acessível para complementar atividades práticas de infraestrutura computacional, reduzindo a dependência de equipamentos físicos e laboratórios especializados.
 
 \vspace{0.3cm}
 \noindent\textit{\textbf{Palavras-chave:}} Realidade Aumentada; Ensino de Hardware; Visão Computacional; Reconhecimento de Gestos.
@@ -108,7 +108,7 @@ Este trabalho apresenta o SAVIT, um sistema educacional baseado em Realidade Aum
 % Abstract
 \section*{Abstract}
 
-This paper presents SAVIT, an educational system based on Augmented Reality (AR), developed to support practical computer hardware assembly instruction through Android mobile devices. The application uses Unity to position three-dimensional components on real-world surfaces and allows users to manipulate them through gestures recognized by MediaPipe, integrated into the project using MediaPipeUnityPlugin. The system features a tutorial with text instructions and audio explanations, guides users through the assembly stages, and provides textual feedback on component placement. In addition, it includes component placement validation, a scoring system, and a participant ranking. The proposal aims to provide an interactive and accessible alternative to complement practical activities in computer infrastructure education, reducing dependence on physical equipment and specialized laboratories.
+This paper presents SAVIT, an educational system based on Augmented Reality (AR), developed to support practical computer hardware assembly instruction through Android mobile devices. The application was developed in Unity and uses MediaPipe, integrated through MediaPipeUnityPlugin, to recognize hand gestures and allow users to manipulate three-dimensional components placed on real-world surfaces. Access to the application is provided through an account created on the project website. After authentication, the system features a tutorial with text instructions and audio explanations, guides users through the assembly stages, and provides textual feedback on component placement. In addition, it includes component placement validation, a scoring system, and a participant ranking. The proposal aims to provide an interactive and accessible alternative to complement practical activities in computer infrastructure education, reducing dependence on physical equipment and specialized laboratories.
 
 \vspace{0.3cm}
 \noindent\textit{\textbf{Keywords:}} Augmented Reality; Hardware Education; Computer Vision; Gesture Recognition.
@@ -156,9 +156,9 @@ No artigo \textit{``Development of Augmented Reality Learning Media for Computer
 
 No trabalho \textit{``First-Year Computer Science and Informatics Students' Experiences of an Immersive Virtual Reality Application for Computer Hardware Assembly''}, Barkhuizen, Botha e De Wet \cite{barkhuizen2026} investigaram as experiências de estudantes ingressantes em Ciência da Computação e Informática com uma aplicação imersiva de Realidade Virtual voltada à montagem de computadores. O estudo aborda a utilização de ambientes virtuais como alternativa para atividades práticas relacionadas ao hardware. Diferentemente de soluções móveis em Realidade Aumentada, a aplicação utiliza dispositivos de Realidade Virtual imersiva, o que representa uma diferença importante em relação à proposta do SAVIT.
 
-No estudo \textit{``Augmented Assembly: Object Recognition and Hand Tracking for Adaptive Assembly Instructions in Augmented Reality''}, Kyaw et al. \cite{kyaw2026} apresentam uma abordagem de montagem assistida por Realidade Aumentada, combinando reconhecimento de objetos, rastreamento das mãos e instruções adaptativas. O trabalho contribui para a discussão sobre o uso de visão computacional na orientação de processos de montagem, apresentando recursos relacionados à interação entre o usuário e elementos virtuais no ambiente real.
+No estudo \textit{``Augmented Assembly: Object Recognition and Hand Tracking for Adaptive Assembly Instructions in Augmented Reality''}, Kyaw et al. \cite{kyaw2026} apresentam uma abordagem de montagem assistida por Realidade Aumentada, combinando reconhecimento de objetos, rastreamento das mãos e instruções adaptativas. O trabalho contribui para a discussão sobre o uso de Visão Computacional na orientação de processos de montagem, apresentando recursos relacionados à interação entre o usuário e elementos virtuais no ambiente real.
 
-Além das aplicações educacionais, no artigo \textit{``MediaPipe: A Framework for Building Perception Pipelines''}, Lugaresi et al. \cite{lugaresi2019} apresentam o MediaPipe, um framework destinado à construção de pipelines de percepção e processamento de dados multimodais. Sua estrutura permite integrar soluções de visão computacional e processamento em tempo real, constituindo uma referência tecnológica relacionada à integração utilizada no SAVIT.
+Além das aplicações educacionais, no artigo \textit{``MediaPipe: A Framework for Building Perception Pipelines''}, Lugaresi et al. \cite{lugaresi2019} apresentam o MediaPipe, um framework destinado à construção de pipelines de percepção e processamento de dados multimodais. Sua estrutura permite integrar soluções de Visão Computacional e processamento em tempo real, constituindo uma referência tecnológica relacionada à integração utilizada no SAVIT.
 
 A Tabela \ref{tab:estado-arte} sintetiza as principais características dos trabalhos analisados e evidencia o diferencial proposto pelo SAVIT.
 
@@ -188,28 +188,28 @@ Exige dispositivos de Realidade Virtual imersiva \\
 Kyaw et al. (2026) &
 Instruções adaptativas de montagem em RA &
 Integração de reconhecimento de objetos e rastreamento das mãos &
-Abordagem voltada à orientação de processos de montagem por visão computacional \\
+Abordagem voltada à orientação de processos de montagem por Visão Computacional \\
 \hline
 
 MediaPipe (Lugaresi et al., 2019) &
 Framework para pipelines de percepção &
-Oferece uma estrutura para integração de soluções de visão computacional &
+Oferece uma estrutura para integração de soluções de Visão Computacional &
 Não constitui, isoladamente, uma solução educacional completa \\
 \hline
 
 SAVIT &
 Montagem de hardware em Realidade Aumentada &
-Integra RA, visão computacional e gestos em dispositivos móveis &
+Integra RA, Visão Computacional e gestos em dispositivos móveis &
 Propõe interação prática voltada ao ensino de infraestrutura computacional \\
 \hline
 
 \end{tabular}
 \end{table}
 
-Nesse contexto, o SAVIT diferencia-se por integrar Realidade Aumentada, visão computacional e reconhecimento de gestos em uma aplicação mobile voltada ao ensino de montagem de hardware. A proposta busca combinar acessibilidade e interação natural em um único ambiente educacional, reduzindo a dependência de equipamentos físicos especializados.
+Nesse contexto, o SAVIT diferencia-se por integrar Realidade Aumentada, Visão Computacional e Reconhecimento de Gestos em uma aplicação mobile voltada ao ensino de montagem de hardware. A proposta busca combinar acessibilidade e interação natural em um único ambiente educacional, reduzindo a dependência de equipamentos físicos especializados.
 
-% Metodologia
-\section{Metodologia}
+% Materiais e Métodos
+\section{Materiais e Métodos}
 
 O desenvolvimento do SAVIT foi conduzido por meio de uma abordagem prática e incremental, organizada em oito etapas, conforme apresentado na Figura \ref{fig:metodologia}: (1) pesquisa de campo; (2) pesquisa bibliográfica; (3) levantamento de requisitos e planejamento; (4) desenvolvimento da aplicação; (5) implementação da Realidade Aumentada; (6) integração do MediaPipe; (7) implementação das etapas de montagem e dos recursos de interação; e (8) realização de testes funcionais.
 
@@ -222,19 +222,86 @@ O desenvolvimento do SAVIT foi conduzido por meio de uma abordagem prática e in
 
 A primeira etapa, representada pelo número 1 na Figura \ref{fig:metodologia}, consistiu na realização de uma pesquisa de campo presencial, no primeiro semestre de 2025, com cinquenta estudantes de diferentes semestres da FATEC Registro, provenientes de diferentes cidades do Vale do Ribeira. O questionário, composto por nove perguntas objetivas e discursivas, buscou identificar a disponibilidade de equipamentos para atividades práticas e a percepção dos estudantes sobre os impactos dessa limitação no aprendizado. As respostas discursivas com significados semelhantes foram agrupadas em categorias para posterior tabulação percentual.
 
-Na segunda etapa, indicada pelo número 2 na Figura \ref{fig:metodologia}, foi realizada uma pesquisa bibliográfica sobre Realidade Aumentada, visão computacional, reconhecimento de gestos e aplicações dessas tecnologias no ensino técnico. Essa investigação contribuiu para a identificação de soluções relacionadas ao projeto e para a fundamentação das escolhas tecnológicas.
+Na segunda etapa, indicada pelo número 2 na Figura \ref{fig:metodologia}, foi realizada uma pesquisa bibliográfica sobre Realidade Aumentada, Visão Computacional, Reconhecimento de Gestos e aplicações dessas tecnologias no ensino técnico. Essa investigação contribuiu para a identificação de soluções relacionadas ao projeto e para a fundamentação das escolhas tecnológicas.
 
 A terceira etapa, representada pelo número 3 na Figura \ref{fig:metodologia}, compreendeu o levantamento dos requisitos funcionais e o planejamento da aplicação. Foram definidos os componentes computacionais utilizados, a sequência de montagem, os mecanismos de interação e os recursos necessários para orientar o usuário durante a atividade.
+
+O levantamento de requisitos também foi apoiado por uma pesquisa de usuários, cujas informações foram sintetizadas em duas personas. O Professor André Silva, de 38 anos, representa o perfil docente de Tecnologia e Informática do Ensino Médio, que busca recursos didáticos interativos, intuitivos e de baixo custo para apoiar o ensino de hardware, especialmente em contextos com disponibilidade limitada de equipamentos. Carla Mendes, de 26 anos, representa o perfil de estudante de curso técnico em Informática, que busca oportunidades de prática, desenvolvimento de habilidades profissionais e experiências acessíveis que aproximem o conteúdo teórico da realidade profissional. As características dessas personas contribuíram para o levantamento de requisitos e para o desenvolvimento do tutorial, orientando a elaboração de instruções mais claras e adequadas às necessidades de professores e estudantes.
 
 Na quarta etapa, indicada pelo número 4 na Figura \ref{fig:metodologia}, foi realizado o desenvolvimento da aplicação na Unity, utilizando a linguagem C\#. Também foram integrados os modelos tridimensionais dos componentes computacionais e implementadas as funcionalidades que compõem o sistema.
 
 A quinta etapa, representada pelo número 5 na Figura \ref{fig:metodologia}, correspondeu à implementação da Realidade Aumentada. Essa funcionalidade permite detectar superfícies planas por meio da câmera do dispositivo Android e posicionar os componentes virtuais no ambiente físico. O usuário pode ajustar a posição e a rotação dos elementos antes de confirmar sua disposição e iniciar a montagem.
 
-Na sexta etapa, indicada pelo número 6 na Figura \ref{fig:metodologia}, foi realizada a integração do MediaPipe por meio do MediaPipeUnityPlugin. O reconhecimento dos movimentos das mãos utiliza scripts em Python executados pelo plugin, enquanto a aplicação e suas funcionalidades são controladas pela Unity, por meio de C\#. Essa integração possibilita a manipulação dos componentes virtuais por meio de gestos realizados diante da câmera do dispositivo.
+Na sexta etapa, indicada pelo número 6 na Figura \ref{fig:metodologia}, foi realizada a integração do MediaPipe à aplicação Unity por meio do MediaPipeUnityPlugin. A lógica da aplicação e o controle das funcionalidades são implementados em C\#. O MediaPipeUnityPlugin integra os recursos do MediaPipe ao projeto Unity, permitindo o reconhecimento das mãos e dos gestos realizados diante da câmera do dispositivo.
 
 A sétima etapa, representada pelo número 7 na Figura \ref{fig:metodologia}, envolveu a implementação das etapas de montagem e dos recursos de interação. Foram desenvolvidos mecanismos de validação dos encaixes e feedback textual para indicar ações corretas ou incorretas. Também foram incorporados um tutorial com instruções em texto e explicações em áudio, um sistema de pontuação e um ranking dos participantes.
 
-Por fim, a oitava etapa, indicada pelo número 8 na Figura \ref{fig:metodologia}, consistiu na realização de testes funcionais em dispositivos Android. Os testes tiveram como objetivo verificar o funcionamento dos recursos implementados, incluindo a detecção de superfícies, o reconhecimento de gestos, o posicionamento e a validação dos componentes, o tutorial, o feedback e o sistema de pontuação. Não foram realizadas avaliações com usuários externos nem testes quantitativos de eficácia educacional nesta etapa, sendo essas atividades consideradas possibilidades para trabalhos futuros.
+Por fim, a oitava etapa, indicada pelo número 8 na Figura \ref{fig:metodologia}, consistiu na realização de testes funcionais em dispositivos Android. Os testes tiveram como objetivo verificar o funcionamento dos recursos implementados, incluindo a detecção de superfícies, o Reconhecimento de Gestos, o posicionamento e a validação dos componentes, o tutorial, o feedback e o sistema de pontuação. Não foram realizadas avaliações com usuários externos nem testes quantitativos de eficácia educacional nesta etapa, sendo essas atividades consideradas possibilidades para trabalhos futuros.
+
+
+\subsection{Website e serviços de backend}
+
+O projeto também disponibiliza um website institucional, acessível pelo endereço \url{https://orbi-sp.github.io/landing-page/}, que apresenta informações sobre o SAVIT, sua equipe e a opção de download da aplicação. O website permite que o usuário crie uma conta, utilizada posteriormente para autenticação no aplicativo Android. Dessa forma, o cadastro é realizado no website e o acesso às funcionalidades da aplicação ocorre mediante o preenchimento das mesmas credenciais na tela de login do aplicativo. A Figura \ref{fig:website-conta} apresenta a interface de criação de conta no website, enquanto a Figura \ref{fig:login-website-app} apresenta a tela de autenticação do aplicativo.
+
+A infraestrutura de backend utiliza o Amazon API Gateway para disponibilizar os endpoints de uma API REST, responsáveis por intermediar a comunicação entre o website, a aplicação Android e os serviços de processamento. As requisições são encaminhadas para funções AWS Lambda, desenvolvidas em JavaScript e executadas no runtime Node.js 22.x, que realizam operações de criação de conta, autenticação, registro de partidas (runs), consulta ao ranking global e consulta ao histórico individual do usuário. Os dados são armazenados em um banco de dados PostgreSQL, hospedado na plataforma Supabase, na versão 17.11.0.011.
+
+A Figura \ref{fig:devops-infraestrutura} apresenta a infraestrutura de comunicação entre o website, a aplicação Android, os serviços de backend e o banco de dados. A representação considera o consumo das rotas da API REST pelos clientes e a execução das funções no AWS Lambda.
+
+
+
+\begin{figure}[H]
+    \centering
+    \IfFileExists{imgs/devops-infraestrutura.png}{%
+        \includegraphics[width=0.95\textwidth]{imgs/devops-infraestrutura.png}%
+    }{%
+        \fbox{\parbox{0.9\textwidth}{\centering Imagem pendente: devops-infraestrutura.png}}%
+    }
+    \caption{Infraestrutura de comunicação do SAVIT}
+    \label{fig:devops-infraestrutura}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \IfFileExists{imgs/website-conta.png}{%
+            \includegraphics[width=\textwidth]{imgs/website-conta.png}%
+        }{%
+            \fbox{\parbox{0.9\textwidth}{\centering Imagem pendente: website-conta.png}}%
+        }
+        \captionof{figure}{Tela de criação de conta no website do projeto}
+        \label{fig:website-conta}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \IfFileExists{imgs/website-download.png}{%
+            \includegraphics[width=\textwidth]{imgs/website-download.png}%
+        }{%
+            \fbox{\parbox{0.9\textwidth}{\centering Imagem pendente: website-download.png}}%
+        }
+        \captionof{figure}{Página de download da aplicação no website do projeto}
+        \label{fig:download-website}
+    \end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.42\textwidth]{imgs/savit-login.png}
+    \caption{Tela de login da aplicação Android}
+    \label{fig:login-website-app}
+\end{figure}
+
+\subsection{Ambiente de teste}
+
+O desenvolvimento e a compilação da aplicação foram realizados principalmente em um notebook com Windows 11 Pro, versão 10.0.26200 (compilação 26200), processador Intel Core i5-1235U, 12 GB de memória RAM e gráficos integrados Intel Iris Xe Graphics. A placa-mãe do equipamento é identificada como LENOVO LNVNB161216. A aplicação foi desenvolvida na Unity, versão 6000.2.6f2, utilizando C\#.
+
+Os testes em dispositivos móveis foram realizados em mais de um aparelho Android. Para o desenvolvimento e a validação da versão final, o dispositivo principal utilizado foi um POCO X7 Pro, com Android 16 (versão BP2A.250605.031.A3), 8 GB de memória RAM, 256 GB de armazenamento interno e processador MediaTek Dimensity 8400-Ultra, octa-core com frequência máxima de 3,25 GHz. Essas especificações caracterizam os equipamentos principais utilizados, não representando a totalidade dos dispositivos empregados nos testes.
+
+A integração do MediaPipe é realizada por meio do MediaPipeUnityPlugin no ambiente Unity. Para o backend, foram utilizados AWS Lambda, com runtime Node.js 22.x, e Supabase como plataforma de hospedagem do banco de dados PostgreSQL 17.11.0.011. As versões específicas dos serviços AWS Lambda e Supabase não são indicadas, uma vez que esses serviços não são identificados no projeto por um número de versão equivalente ao runtime ou ao sistema gerenciador de banco de dados.
 
 
 % Resultados e Discussão
@@ -308,7 +375,7 @@ A aplicação disponibiliza modelos tridimensionais de componentes computacionai
     \end{minipage}
 \end{figure}
 
-A interação com os componentes é realizada por meio do reconhecimento de gestos manuais. O fechamento da mão é interpretado pelo sistema como o comando para agarrar um componente, enquanto a abertura da mão permite soltá-lo. Durante cada etapa, somente o componente correspondente à atividade atual pode ser manipulado, orientando o usuário na sequência de montagem.
+A interação com os componentes é realizada por meio do Reconhecimento de Gestos manuais. O fechamento da mão é interpretado pelo sistema como o comando para agarrar um componente, enquanto a abertura da mão permite soltá-lo. Durante cada etapa, somente o componente correspondente à atividade atual pode ser manipulado, orientando o usuário na sequência de montagem.
 
 A montagem contempla a fixação do gabinete, o encaixe da placa-mãe e da memória RAM, a instalação da fonte de alimentação e do disco rígido, além da conexão dos respectivos cabos. Posteriormente, o usuário posiciona o monitor e realiza a conexão do cabo VGA, primeiro ao computador e depois ao monitor. O sistema verifica o posicionamento dos componentes e fornece feedback textual para indicar se a ação realizada está correta ou incorreta.
 
@@ -320,9 +387,9 @@ A montagem contempla a fixação do gabinete, o encaixe da placa-mãe e da memó
 \end{figure}
 
 
-Além das etapas de montagem, o SAVIT possui um tutorial com instruções exibidas na tela e explicações em áudio, que orientam o usuário durante a execução das atividades. O sistema também incorpora um mecanismo de pontuação, iniciado em 500 pontos, com desconto de 10 pontos a cada erro de encaixe. O tempo total utilizado para concluir a montagem também é registrado. Ao finalizar todas as etapas, o participante informa seu nome e pode visualizar sua posição no ranking. A classificação considera a pontuação obtida e, em caso de empate, utiliza o menor tempo total de montagem como critério de desempate, favorecendo o participante que concluir a atividade em menos tempo.
+Além das etapas de montagem, o SAVIT possui um tutorial com instruções exibidas na tela e explicações em áudio, que orientam o usuário durante a execução das atividades. O acesso à aplicação é realizado por meio de login, utilizando as credenciais cadastradas previamente no website do projeto. Após a conclusão da montagem, o resultado é associado automaticamente à conta autenticada, sem necessidade de o participante informar novamente seu nome. O usuário pode consultar o ranking global e os resultados vinculados à própria conta, por meio da consulta ao ranking individual. O sistema incorpora um mecanismo de pontuação aplicado a cinco etapas monitoradas da montagem. Cada uma dessas etapas inicia com 100 pontos, totalizando até 500 pontos por partida, com desconto de 10 pontos a cada erro registrado na respectiva etapa, respeitando o limite mínimo de zero ponto. O tempo total utilizado para concluir a montagem também é registrado. Ao finalizar as atividades, o usuário pode consultar o ranking global e sua classificação individual.
 
-Os testes funcionais realizados pela equipe em dispositivos Android permitiram verificar o funcionamento dos principais recursos implementados, incluindo a detecção de superfícies planas, o posicionamento dos componentes, o reconhecimento de gestos, a validação dos encaixes, as instruções do tutorial, o feedback textual e o sistema de pontuação e ranking.
+Os testes funcionais realizados pela equipe em dispositivos Android permitiram verificar o funcionamento dos principais recursos implementados, incluindo a detecção de superfícies planas, o posicionamento dos componentes, o Reconhecimento de Gestos, a validação dos encaixes, as instruções do tutorial, o feedback textual e o sistema de pontuação e ranking.
 
 Apesar dos resultados técnicos obtidos, não foram realizadas avaliações com usuários externos nem testes quantitativos de eficácia educacional nesta etapa. Dessa forma, os resultados permitem apresentar as funcionalidades implementadas e demonstrar o funcionamento técnico do protótipo, mas ainda não permitem afirmar que sua utilização proporciona melhoria na aprendizagem. A avaliação da experiência dos estudantes e dos possíveis impactos educacionais permanece como uma possibilidade para trabalhos futuros.
 
@@ -330,20 +397,15 @@ Apesar dos resultados técnicos obtidos, não foram realizadas avaliações com 
 % Conclusão
 \section{Conclusão}
 
-O desenvolvimento do SAVIT permitiu implementar uma aplicação educacional para dispositivos móveis Android, baseada em Realidade Aumentada, com o objetivo de complementar o ensino prático de montagem de hardware. A solução possibilita posicionar componentes computacionais tridimensionais em superfícies reais e interagir com eles por meio de gestos manuais reconhecidos pelo MediaPipe, integrado à Unity por meio do MediaPipeUnityPlugin.
+O desenvolvimento do SAVIT permitiu implementar uma aplicação educacional para dispositivos móveis Android, baseada em Realidade Aumentada, com o objetivo de complementar o ensino prático de montagem de hardware. A solução possibilita posicionar componentes computacionais tridimensionais em superfícies reais e interagir com eles por meio de gestos manuais reconhecidos pelo MediaPipe, integrado ao projeto Unity por meio do MediaPipeUnityPlugin. O projeto também conta com um website para apresentação, criação de contas e download da aplicação, que utiliza autenticação para associar os resultados de montagem aos usuários cadastrados.
 
-A aplicação contempla diferentes etapas de montagem e conexão de componentes computacionais, além de recursos de orientação e interação, como tutorial com instruções em texto e áudio, validação dos encaixes e feedback textual sobre as ações realizadas. Também foram implementados mecanismos de pontuação e ranking, nos quais o participante inicia com 500 pontos, perde 10 pontos a cada erro de encaixe e tem o tempo total de montagem registrado. Em caso de empate na pontuação, o menor tempo de conclusão determina a melhor classificação.
+A aplicação contempla diferentes etapas de montagem e conexão de componentes computacionais, além de recursos de orientação e interação, como tutorial com instruções em texto e áudio, validação dos encaixes e feedback textual sobre as ações realizadas. Também foram implementados mecanismos de pontuação e ranking, nos quais cinco etapas monitoradas recebem até 100 pontos cada, totalizando o máximo de 500 pontos por partida. A cada erro registrado em uma dessas etapas, são descontados 10 pontos, respeitando o limite mínimo de zero ponto. O tempo total de montagem também é registrado pelo sistema.
 
 A pesquisa de campo realizada com cinquenta estudantes da FATEC Registro evidenciou dificuldades relacionadas à disponibilidade de equipamentos para atividades práticas e uma percepção favorável ao uso de tecnologias acessíveis como recursos complementares ao ensino. Esses resultados reforçam a relevância da problemática investigada e fundamentam a proposta do SAVIT, mas não constituem uma avaliação de sua eficácia pedagógica.
 
 Os testes funcionais realizados pela equipe em dispositivos Android permitiram verificar o funcionamento dos principais recursos implementados. Entretanto, ainda não foram realizadas avaliações com usuários externos nem estudos quantitativos para mensurar a usabilidade, o desempenho ou os possíveis impactos da aplicação no processo de aprendizagem. Dessa forma, não é possível afirmar, nesta etapa, que o uso do SAVIT proporciona melhoria no aprendizado dos estudantes.
 
 Como trabalhos futuros, pretende-se realizar avaliações com estudantes e professores, investigar a experiência de uso da aplicação e analisar sua contribuição para o ensino de montagem de hardware. Também poderão ser exploradas melhorias na experiência de interação e a ampliação das atividades e dos componentes disponíveis. Essas iniciativas permitirão avaliar a solução em contextos educacionais reais e identificar oportunidades de evolução do sistema.
-
-% Agradecimentos
-\section*{Agradecimentos}
-
-Os autores agradecem à Faculdade de Tecnologia de Registro e ao Centro Paula Souza pelo apoio institucional ao desenvolvimento do projeto, bem como aos estudantes que participaram da pesquisa de campo e contribuíram para a compreensão da problemática investigada.
 
 % Referências
 \bibliographystyle{IEEEtran}
