@@ -20,7 +20,7 @@
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.geometric, positioning}
 \usepackage[hidelinks]{hyperref}
 
 \definecolor{headercolor}{HTML}{b11116}
@@ -101,81 +101,53 @@
 \tableofcontents
 \newpage
 
-\section*{Nota Importante sobre os Artefatos}
-Este documento apresenta exemplos de como inserir os principais artefatos de um projeto de software. Todos os artefatos podem ser inseridos de duas formas:
-
-\begin{enumerate}
-    \item Como imagens: Criar os artefatos em ferramentas externas (Canva, Miro, Draw.io, Figma, etc.) e inserir como imagens PNG/JPG usando o comando \texttt{\textbackslash includegraphics}.
-    \item Como código LaTeX: Usar tabelas e diagramas TikZ diretamente no documento (exemplos fornecidos).
-\end{enumerate}
-
-\subsection*{Lista de Artefatos e suas Finalidades}
-\begin{itemize}
-    \item CANVAS: Modelo de negócio e estratégia
-    \item SWOT: Análise estratégica de forças, fraquezas, oportunidades e ameaças
-    \item UX/UI: Design de interface e experiência do usuário
-    \item Website: Estrutura e especificações técnicas web
-    \item Diagramas UML: Modelagem visual do sistema
-    \item DevOps: Infraestrutura, automação e práticas de entrega contínua
-\end{itemize}
-
-\newpage
-
 \section{CANVAS: Modelo de Negócio e Estratégia}
-O Business Model Canvas é uma ferramenta visual estratégica que permite descrever, analisar e projetar modelos de negócio de forma clara e objetiva. O canvas é dividido em nove blocos fundamentais que cobrem as principais áreas de um negócio.
+O Business Model Canvas é uma ferramenta visual utilizada para representar os principais elementos do modelo de negócio do SAVIT, incluindo proposta de valor, público-alvo, canais, recursos, atividades, parcerias, custos e fontes de receita.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{imgs/canvas-savit.png}
-\caption{Business Model Canvas do Projeto}
+\caption{Business Model Canvas do projeto SAVIT.}
 \label{fig:canvas}
 \end{figure}
 
 \section{SWOT: Análise Estratégica}
-A Análise SWOT (Strengths, Weaknesses, Opportunities, Threats) ou FOFA (Forças, Oportunidades, Fraquezas e Ameaças) é uma ferramenta fundamental para planejamento estratégico que permite identificar fatores internos e externos que impactam o projeto. Analisa forças, fraquezas, oportunidades e ameaças do projeto.
+A análise SWOT identifica fatores internos e externos que podem influenciar o desenvolvimento e a utilização do SAVIT. A ferramenta considera forças, fraquezas, oportunidades e ameaças relacionadas à proposta de ensino de montagem de hardware com realidade aumentada.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{imgs/swot-savit.png}
-\caption{Análise SWOT do projeto.}
+\caption{Análise SWOT do projeto SAVIT.}
 \label{fig:swot}
 \end{figure}
 
-\section{UX/UI: Design de Interface e Experiência do Usuário}
-UX (User Experience) e UI (User Interface) são disciplinas complementares focadas em criar produtos digitais que sejam funcionais, acessíveis e agradáveis de usar. O UX concentra-se na experiência geral do usuário, enquanto o UI cuida dos elementos visuais e interativos.
+\section{Metodologia do Projeto}
+A metodologia de desenvolvimento adotada no SAVIT abrange desde o levantamento de problemas e pesquisa de campo preliminar até o planejamento, criação de assets 3D, desenvolvimento AR na Unity, tracking de mãos e testes.
 
-\subsection{Protótipo do Sistema}
 \begin{figure}[H]
 \centering
-\begin{subfigure}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{imgs/ux-wireframe.png}
-    \caption{Wireframe da tela inicial}
-    \label{fig:wireframe}
-\end{subfigure}
-\hfill
-\begin{subfigure}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{imgs/ux-prototipo.png}
-    \caption{Protótipo de alta fidelidade}
-    \label{fig:prototipo}
-\end{subfigure}
-\caption{Protótipos da interface do SAVIT.}
+\includegraphics[width=\textwidth]{imgs/metodologia-savit.png}
+\caption{Metodologia de desenvolvimento do projeto SAVIT.}
+\label{fig:metodologia}
 \end{figure}
 
-\subsection{Paleta Geral SAVIT}
-Paleta de cores utilizadas no Site e no Menu do sistema:
+\section{UX/UI: Design de Interface e Experiência do Usuário}
+Esta seção apresenta os artefatos de interface do usuário e capturas reais da aplicação móvel em execução em dispositivo Android.
+
+\subsection{Paleta de cores}
+A Tabela~\ref{tab:paleta} apresenta as cores definidas para a identidade visual do projeto.
 
 \begin{table}[H]
 \centering
-\caption{Paleta de Cores do Projeto}
+\caption{Paleta de cores do projeto.}
+\label{tab:paleta}
 \begin{tabular}{|l|c|l|l|}
 \hline
 \textbf{Elemento} & \textbf{Cor} & \textbf{Código HEX} & \textbf{Uso} \\
 \hline
-Primária & \colorbox[HTML]{151599}{\phantom{AAA}} & \#151599 & Botões principais, destaques \\
-Secundária & \colorbox[HTML]{FB00FF}{\phantom{AAA}} & \#FB00FF & Títulos, elementos secundários \\
-Fundo & \colorbox[HTML]{000000}{\phantom{AAA}} & \#000000 & Background padrão \\
+Primária & \colorbox[HTML]{151599}{\phantom{AAA}} & \#151599 & Botões principais e destaques \\
+Secundária & \colorbox[HTML]{FB00FF}{\phantom{AAA}} & \#FB00FF & Títulos e elementos secundários \\
+Fundo & \colorbox[HTML]{000000}{\phantom{AAA}} & \#000000 & Fundo padrão \\
 Texto & \colorbox[HTML]{FFFFFF}{\phantom{AAA}} & \#FFFFFF & Texto principal \\
 Sucesso & \colorbox[HTML]{28a745}{\phantom{AAA}} & \#28a745 & Mensagens de sucesso \\
 Erro & \colorbox[HTML]{dc3545}{\color{white}\phantom{AAA}} & \#dc3545 & Mensagens de erro \\
@@ -183,122 +155,225 @@ Erro & \colorbox[HTML]{dc3545}{\color{white}\phantom{AAA}} & \#dc3545 & Mensagen
 \end{tabular}
 \end{table}
 
-\section{Website: Estrutura e Especificações Técnicas Web}
-Esta seção documenta o website institucional/portfólio da equipe que desenvolveu a aplicação. O site da equipe serve para apresentar os membros, projetos realizados, competências e informações de contato.
+\subsection{Personas}
+As personas ajudam a entender as necessidades, limitações e objetivos dos principais usuários do SAVIT.
 
-\subsection{Mapa do Site da Equipe}
-O mapa do site (sitemap) mostra a hierarquia e organização das páginas do website da equipe:
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/briefing_persona01.png}
+    \caption{Persona 1: Professor André Silva.}
+    \label{fig:persona01}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/briefing_persona02.png}
+    \caption{Persona 2: Carla Mendes.}
+    \label{fig:persona02}
+\end{subfigure}
+\caption{Personas consideradas no projeto SAVIT.}
+\end{figure}
+
+\section{Website: Estrutura e Especificações Técnicas}
+O website da equipe Orbi apresenta o projeto, integra a criação de contas e disponibiliza o download do APK para Android.
+
+\subsection{Mapa do site}
+O mapa do site representa a organização e a navegação entre as páginas do website.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{imgs/website-mapa.png}
-\caption{Estrutura de navegação do website da equipe}
+\caption{Estrutura de navegação do website da equipe.}
 \label{fig:sitemap}
 \end{figure}
 
-\subsection{Conteúdo das Páginas}
-Páginas principais do site da equipe:
-\begin{itemize}
-    \item Home: Apresentação do projeto, Antigas versões do projeto.
-    \item Sobre Nós: Fotos da equipe, Github da equipe e LinkedIn de cada membro.
-    \item Contato: Download do Projeto
-\end{itemize}
-
-\subsection{Screenshots do Website da Equipe}
-Website da equipe:
+\subsection{Páginas do website}
+As páginas a seguir exibem a estrutura Web final para suporte ao projeto.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{imgs/website-home.png}
-\caption{Página inicial do website da equipe}
+\includegraphics[width=0.8\textwidth]{imgs/website-home.png}
+\caption{Página inicial do website da equipe.}
 \label{fig:website-home}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{imgs/website-projeto.png}
-\caption{Página de apresentação do projeto}
+\includegraphics[width=0.8\textwidth]{imgs/website-projeto.png}
+\caption{Página de apresentação do projeto SAVIT.}
 \label{fig:website-projeto}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{imgs/website-equipe.png}
-\caption{Página de apresentação do time}
+\includegraphics[width=0.8\textwidth]{imgs/website-equipe.png}
+\caption{Página de apresentação da equipe Orbi.}
 \label{fig:website-equipe}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{imgs/website-download.png}
-\caption{Página de Download do projeto}
+\includegraphics[width=0.8\textwidth]{imgs/website-download.png}
+\caption{Página de download da aplicação.}
 \label{fig:website-download}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{imgs/website-conta.png}
-\caption{Página de criação de conta do website da equipe}
+\includegraphics[width=0.8\textwidth]{imgs/website-conta.png}
+\caption{Página de criação de conta no website.}
 \label{fig:website-conta}
 \end{figure}
 
-\section{Diagramas UML: Modelagem Visual do Sistema}
-A Unified Modeling Language (UML) é uma linguagem de modelagem visual usada para especificar, visualizar, construir e documentar artefatos de sistemas de software.
+\section{Capturas da Aplicação Móvel (Android / Realidade Aumentada)}
+A aplicação móvel desenvolvida na Unity 6000 integra autenticação, rastreamento de gestos com MediaPipe, detecção de superfícies em AR, instrução tutorial e ranking global.
 
-\subsection{Diagrama de Casos de Uso}
-O diagrama de casos de uso representa as funcionalidades do sistema do ponto de vista do usuário:
+\subsection{Autenticação e Menu Principal}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/savit-login.png}
+    \caption{Tela de Autenticação / Login do aplicativo.}
+    \label{fig:app-login}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/savit-menu-inicial.jpg}
+    \caption{Menu Inicial da aplicação.}
+    \label{fig:app-menu}
+\end{subfigure}
+\caption{Interfaces iniciais da aplicação móvel SAVIT.}
+\end{figure}
+
+\subsection{Posicionamento e Montagem em Realidade Aumentada}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/savit-posicionamento-pecas.jpg}
+    \caption{Detecção de superfície e posicionamento em AR.}
+    \label{fig:app-posicionamento}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/savit-modelagem-3d.jpg}
+    \caption{Disposição dos componentes 3D no ambiente.}
+    \label{fig:app-modelagem}
+\end{subfigure}
+\caption{Etapa de posicionamento dos modelos 3D no ambiente real.}
+\end{figure}
+
+\subsection{Interação por Gestos, Validação e Ranking}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/savit-manipulacao-gestos.jpg}
+    \caption{Interação por gestos (MediaPipe - Mão Fechada).}
+    \label{fig:app-gestos}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imgs/savit-encaixe-componentes.jpg}
+    \caption{Validação e conclusão da montagem.}
+    \label{fig:app-encaixe}
+\end{subfigure}
+\caption{Mecânicas de interação por gestos e confirmação de encaixe dos componentes.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{imgs/ranking_global_app.png}
+\caption{Visualização do Ranking Global na aplicação Android.}
+\label{fig:app-ranking}
+\end{figure}
+
+\section{Diagramas UML: Modelagem do Sistema}
+Representações diagramáticas de acordo com o paradigma da modelagem visual orientada a objetos (UML).
+
+\subsection{Diagrama de casos de uso}
+O diagrama de casos de uso foca nas interações entre o usuário, as funcionalidades de montagem por gestos e as respostas de ranking e backend.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{imgs/uml-casos-de-uso.png}
-\caption{Diagrama de caso de uso do projeto}
+\caption{Diagrama de casos de uso do projeto.}
 \label{fig:casos-uso}
 \end{figure}
 
-\subsection{Diagrama de Classes}
-O diagrama de classes mostra a estrutura estática do sistema:
+\subsection{Diagrama de classes}
+O diagrama de classes detalha a estrutura de C\# ativa, dividida por módulos de Realidade Aumentada, Interação, Tutoriais e Autenticação.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{imgs/uml-classes.png}
-\caption{Diagrama de Classes do Sistema}
+\includegraphics[width=\textwidth]{imgs/uml-classes.png}
+\caption{Diagrama de classes do sistema SAVIT.}
 \label{fig:classes}
 \end{figure}
 
-\subsection{Diagrama de Objetos}
-O diagrama de objetos mostra uma "fotografia" estática de um sistema em um momento específico, exibindo instâncias concretas de objetos, os valores atuais de seus atributos e os vínculos (links) entre eles.
+\subsection{Diagrama de objetos}
+O diagrama de objetos ilustra instâncias ativas do sistema durante uma partida de montagem prática.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{imgs/uml-objetos.png}
-\caption{Diagrama de objetos do Sistema}
+\includegraphics[width=\textwidth]{imgs/uml-objetos.png}
+\caption{Diagrama de objetos do sistema.}
 \label{fig:objetos}
 \end{figure}
 
-\section{DevOps: Infraestrutura}
-DevOps é uma cultura e conjunto de práticas que integra desenvolvimento de software (Dev) e operações de TI (Ops), focando em automação, colaboração e entrega contínua.
+\section{Modelagem do Banco de Dados}
+O SAVIT utiliza o PostgreSQL no Supabase.
 
-\subsection{Diagrama de Infraestrutura}
-Para ilustrar como os componentes se conectam:
+\subsection{Diagrama lógico}
+Identificação lógica e conceitual das tabelas e relacionamentos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{imgs/diagrama_logico.png}
+\caption{Diagrama lógico de dados do banco de dados.}
+\label{fig:diag-logico}
+\end{figure}
+
+\subsection{Diagrama relacional}
+Estrutura física de tabelas, chaves e integridade relacional.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{imgs/diagrama_relacional.png}
+\caption{Diagrama relacional (DER) do banco de dados.}
+\label{fig:diag-relacional}
+\end{figure}
+
+\section{DevOps e Infraestrutura}
+A infraestrutura em nuvem garante escalabilidade por meio da arquitetura sem servidor (serverless) da AWS aliada ao Supabase.
+
+\subsection{Arquitetura e Integração Geral (DevOps)}
+Detalhamento de ambientes, esteiras de build e o processamento local.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{imgs/devops-infraestrutura.png}
-\caption{Diagrama de Infraestrutura do Sistema}
-\label{fig:infraestrutura}
+\caption{Visão geral da arquitetura de DevOps.}
+\label{fig:devops}
 \end{figure}
 
-\section*{Conclusão}
-Este documento apresenta os principais artefatos necessários para a documentação completa do sistema de ensino com realidade aumentada SAVIT (Sistema de Aprendizagem Virtual e Infraestrutura Tecnológica). Cada seção descreve o funcionamento do sistema, suas funcionalidades e as principais inovações propostas pelo projeto.
+\subsection{Infraestrutura de Rede}
+O diagrama lógico da rede mapeia a ausência de conexões diretas entre clientes e bancos, assegurando a segurança intermediada pelo API Gateway e Lambda.
 
-Os artefatos documentados incluem:
-\begin{itemize}
-    \item CANVAS: Modelo de negócio e estratégia
-    \item SWOT: Análise estratégica de forças, fraquezas, oportunidades e ameaças
-    \item UX/UI: Design de interface e experiência do usuário
-    \item Website: Estrutura e especificações técnicas web
-    \item Diagramas UML: Modelagem visual do sistema
-    \item DevOps: Infraestrutura do Sistema
-\end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{imgs/diagrama-infraestrutura-rede.png}
+\caption{Diagrama de Infraestrutura de Rede do SAVIT.}
+\label{fig:rede}
+\end{figure}
+
+\section{Conclusão}
+Este documento de artefatos acadêmicos consolida a especificação do SAVIT em todas as suas vertentes. Os novos diagramas retratam o escopo e o software em execução com total consistência.
 
 \end{document}
